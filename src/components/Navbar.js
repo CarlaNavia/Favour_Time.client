@@ -1,0 +1,41 @@
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { withAuth } from "../lib/AuthProvider";
+import SearchService from './SearchService';
+
+class Navbar extends Component {
+ 
+  render() {
+    const { user, logout, isLoggedin } = this.props;
+    return (
+      <nav className='navbar'>
+        <Link to={"/"} id='home-btn'>
+          <h4>Home</h4>
+        </Link>
+        {isLoggedin ? (
+          <>
+            <p className='navbar-user'>
+            name: {user.name} <br/>
+            credits: {user.credits} credits
+            
+            </p>
+            <button className='navbar-button' onClick={logout}>Logout</button>
+          </>
+        ) : (
+          <>
+            <Link to='/login'>
+              <button className='navbar-button'>Login</button>
+            </Link>
+            <br />
+            <Link to='/signup'>
+              <button className='navbar-button'>Sign Up</button>
+            </Link>
+          </>
+        )}
+        <SearchService/>
+      </nav>
+    );
+  }
+}
+
+export default withAuth(Navbar);
