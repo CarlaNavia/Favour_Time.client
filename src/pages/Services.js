@@ -2,42 +2,43 @@ import React, { Component } from 'react';
 import routes from '../lib/auth-service';
 
 class Services extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            services: [],
-        }
+    state = {
+        servicesType: {},
+        services: []
     }
+    
     componentDidMount() {
         this.getAllServicesSameType();
     }
 
     getAllServicesSameType = () => {
         const { params } = this.props.match;
-        console.log(params, 'params')
         routes.getAllServicesSameType(params.categoryID)
         .then(responseFromApi => {
-            console.log(responseFromApi , 'responseFromApi')
             this.setState({
-              services: responseFromApi.data
+              servicesType: responseFromApi,
+              services: responseFromApi.services
             });
         })
         .catch(error => console.log(error));
       };
 
     render (){
-        console.log(this.state.services , 'services')
-        return( <div>
-            {this.state.services.map((service) => {
+
+        return( 
+        <>
+        <div>
+            {this.state.services.length > 0 && this.state.services.map((service) => {
                 return (
                     <div key={service._id}>
-                            <h3>{service.serviceName}</h3>
+                        <h3>{service.serviceName}</h3>
                     </div>
                 )
             })}
-        </div>)
+        </div>
+        </>
+        );
     }
-
 }
 
 export default Services;

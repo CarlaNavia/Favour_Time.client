@@ -4,7 +4,7 @@ import routes from '../lib/auth-service';
 import { Link } from "react-router-dom";
 
 class ServiceType extends Component {
-
+    
     state= {
         serviceType: [],
     }
