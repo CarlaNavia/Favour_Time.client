@@ -11,13 +11,27 @@ class MyBookings extends Component {
   getMyBookings() {
     BookingService.getBookingsByUserID(this.props.userId).then((bookings) =>
       this.setState({ listOfBookings: bookings })
+      
     );
+  }
+  renderMyBookings() {
+      return (
+          <ul> {this.state.listOfBookings.map((eachBooking, index) => {
+                return  <li>{eachBooking.service.serviceName}</li>
+          })}
+             
+          </ul>
+      )
   }
 
   render() {
+    console.log(this.state.listOfBookings, "listOF")
     return (
       <div>
-        <h1>{this.props.userId}</h1>
+        <h1>My bookings:</h1>
+        { this.state.listOfBookings.length === 0 && "Unfortunately you have not booked any service yet."}
+        { this.state.listOfBookings.length > 0 && this.renderMyBookings()}
+
       </div>
     );
   }
