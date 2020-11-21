@@ -30,7 +30,7 @@ class AuthProvider extends React.Component {
 
   componentDidMount() {
     auth
-      .me()
+      .profile()
       .then((user) =>
         this.setState({ isLoggedin: true, user: user, isLoading: false })
       )

@@ -27,9 +27,9 @@ class Auth {
     // return this.auth.post("/auth/logout", {}).then((response) => response.data);
   }
 
-  me() {
+  profile() {
     return this.auth.get("/auth/profile").then(({ data }) => data);
-    // return this.auth.get("/auth/me").then((response) => response.data);
+    // return this.auth.get("/auth/profile").then((response) => response.data);
   }
 
   getAllServices(){
