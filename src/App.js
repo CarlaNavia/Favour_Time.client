@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./pages/Private";
-// import AnonRoute from "./components/AnonRoute";
+import Profile from "./pages/Profile";
 import PrivateRoute from "./components/PrivateRoute";
 import ServiceType from './components/ServiceType';
 import Services from './pages/Services';
@@ -26,6 +26,11 @@ class App extends Component {
             <Route exact path='/servicetype' component={ServiceType} />
             <Route exact path='/servicetype/:categoryID' component={Services} />
             <PrivateRoute exact path='/private' component={Private} />
+<<<<<<< HEAD
+=======
+            <PrivateRoute exact path='/profile' component={Profile} />
+            
+>>>>>>> 45c5760038e18ee5cc26031a2ddbb1776edfece3
           </Switch>
         
  
