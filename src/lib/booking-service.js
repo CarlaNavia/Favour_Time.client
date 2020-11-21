@@ -11,6 +11,11 @@ class BookingService {
     return this.axios.get(`/clientbooking/${userId}`)
     .then(({ data }) => data);
   }
+
+  getRequestsByUserID(userId) {
+    return this.axios.get(`/ownerservice/${userId}`)
+    .then(({ data }) => data);
+  }
 }
 
 const axiosRequestFunctions = new BookingService();

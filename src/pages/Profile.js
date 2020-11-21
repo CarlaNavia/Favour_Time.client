@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import auth from "../lib/auth-service";
 import MyBookings from "../components/MyBookings";
+import MyRequests from "../components/MyRequests";
 
 
 class Profile extends Component {
@@ -26,6 +27,7 @@ class Profile extends Component {
         <p>{this.props.user.imageProfile}</p>
         <p>{this.getUserRating()}</p>
         <MyBookings userId={this.props.user._id}/>
+        <MyRequests userId={this.props.user._id}/>
 
       </div>
     );

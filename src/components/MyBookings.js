@@ -9,7 +9,8 @@ class MyBookings extends Component {
     this.getMyBookings();
   }
   getMyBookings() {
-    BookingService.getBookingsByUserID(this.props.userId).then((bookings) =>
+    BookingService.getBookingsByUserID(this.props.userId)
+    .then((bookings) =>
       this.setState({ listOfBookings: bookings })
       
     );
@@ -25,7 +26,6 @@ class MyBookings extends Component {
   }
 
   render() {
-    console.log(this.state.listOfBookings, "listOF")
     return (
       <div>
         <h1>My bookings:</h1>
