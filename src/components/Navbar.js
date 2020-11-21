@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import SearchService from './SearchService';
+// import Search from './Search';
 
 class Navbar extends Component {
  
@@ -32,7 +32,6 @@ class Navbar extends Component {
             </Link>
           </>
         )}
-        <SearchService/>
       </nav>
     );
   }

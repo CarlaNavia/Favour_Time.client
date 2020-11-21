@@ -33,8 +33,13 @@ class Auth {
   }
 
   getAllServices(){
-    return this.auth.get(`/allservices`).then(({ data }) => data);
+    return this.auth.get(`/servicetype`).then(({ data }) => data);
   }
+
+  getAllServicesSameType(categoryID){
+    return this.auth.get(`/servicetype/${categoryID}`).then(({ data }) => data);
+  }
+
 
 }
 
