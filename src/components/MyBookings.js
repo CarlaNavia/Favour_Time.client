@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookingService from "../lib/booking-service";
 
+
 class MyBookings extends Component {
   state = {
     listOfBookings: [],
@@ -15,22 +16,14 @@ class MyBookings extends Component {
       
     );
   }
-  renderMyBookings() {
-      return (
-          <ul> {this.state.listOfBookings.map((eachBooking, index) => {
-                return  <li>{eachBooking.service.serviceName}</li>
-          })}
-             
-          </ul>
-      )
-  }
+
 
   render() {
     return (
       <div>
         <h1>My bookings:</h1>
         { this.state.listOfBookings.length === 0 && "Unfortunately you have not booked any service yet."}
-        { this.state.listOfBookings.length > 0 && this.renderMyBookings()}
+        { this.state.listOfBookings.length > 0 && <BookingList bookings={this.state.listOfBookings}/>}
 
       </div>
     );

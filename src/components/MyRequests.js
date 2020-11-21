@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookingService from "../lib/booking-service";
+import BookingList from "./BookingList";
 
 class MyRequests extends Component {
     state = {
@@ -16,22 +17,12 @@ class MyRequests extends Component {
     this.setState({listOfRequests:requests}))
   }
 
-  renderRequests() {
-      return(
-          <ul>{this.state.listOfRequests.map((eachRequest, index) => {
-              return <li>{eachRequest.service.serviceName}</li>
-          })}
-
-          </ul>
-      )
-  }
-
   render() {
     return (
       <div>
         <h1>My requests:</h1>
         { this.state.listOfRequests.length === 0 && "Unfortunately you have not any request yet."}
-        { this.state.listOfRequests.length > 0 && this.renderRequests()}
+        { this.state.listOfRequests.length > 0 && <BookingList isOwner bookings={this.state.listOfRequests}/>}
       </div>
     );
   }
