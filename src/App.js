@@ -13,7 +13,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import ServiceType from './components/ServiceType';
 import Services from './pages/Services';
 import Packs from './pages/Packs';
-
+import Faqs from './pages/Faqs';
 class App extends Component {
   render() {
     return (
@@ -27,6 +27,7 @@ class App extends Component {
             <Route exact path='/login' component={Login} />
             <Route exact path='/servicetype' component={ServiceType} />
             <Route exact path='/servicetype/:categoryID' component={Services} />
+            <Route exact path='/faqs' component={Faqs} />
             <PrivateRoute exact path='/private' component={Private} />
             <PrivateRoute exact path='/profile' component={Profile} />
             <PrivateRoute exact path='/profile/edit/:userId' component={EditProfile} />

@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import MyBookings from "../components/MyBookings";
 import MyRequests from "../components/MyRequests";
+import MyReviews from "../components/MyReviews";
 import UserDetails from "../components/UserDetails";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css"
+import "react-tabs/style/react-tabs.css";
 
 class Profile extends Component {
   getUserRating() {
@@ -63,7 +64,7 @@ class Profile extends Component {
             <MyRequests userId={this.props.user._id} />
           </TabPanel>
           <TabPanel>
-            <h3>My reviews panel</h3>
+            <MyReviews userId={this.props.user._id} />
           </TabPanel>
           <TabPanel>
             <UserDetails user={this.props.user} />

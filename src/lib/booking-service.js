@@ -21,6 +21,10 @@ class BookingService {
     return this.axios.put(`/bookings/${bookingId}/${status}`)
     .then(({ data }) => data);
   }
+  getReviewsByUserID(userId) {
+    return this.axios.get(`/reviews/${userId}`)
+    .then(({data}) => data)
+  }
 }
 
 const axiosRequestFunctions = new BookingService();
