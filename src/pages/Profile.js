@@ -3,6 +3,8 @@ import { withAuth } from "../lib/AuthProvider";
 import MyBookings from "../components/MyBookings";
 import MyRequests from "../components/MyRequests";
 import UserDetails from "../components/UserDetails";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css"
 
 class Profile extends Component {
   getUserRating() {
@@ -35,9 +37,41 @@ class Profile extends Component {
 
         <img src={this.getImageProfile()} />
         <p>{this.getUserRating()}/5</p>
-        <MyBookings userId={this.props.user._id} />
-        <MyRequests userId={this.props.user._id} />
-        <UserDetails user={this.props.user} />
+
+        <Tabs>
+          <TabList>
+            <Tab>
+              <p>My Bookings</p>
+            </Tab>
+            <Tab>
+              <p>My Requests</p>
+            </Tab>
+            <Tab>
+              <p>My Reviews</p>
+            </Tab>
+            <Tab>
+              <p>My Profile</p>
+            </Tab>
+            <Tab>
+              <p>My Services</p>
+            </Tab>
+          </TabList>
+          <TabPanel>
+            <MyBookings userId={this.props.user._id} />
+          </TabPanel>
+          <TabPanel>
+            <MyRequests userId={this.props.user._id} />
+          </TabPanel>
+          <TabPanel>
+            <h3>My reviews panel</h3>
+          </TabPanel>
+          <TabPanel>
+            <UserDetails user={this.props.user} />
+          </TabPanel>
+          <TabPanel>
+            <h4>My services panel</h4>
+          </TabPanel>
+        </Tabs>
       </div>
     );
   }
