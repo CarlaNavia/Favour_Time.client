@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import routes from '../lib/auth-service';
+import ServiceTypeService from '../lib/serviceType-service';
+import { Link } from "react-router-dom";
+import Navbar from '../components/Navbar';
 
 class Services extends Component {
     state = {
@@ -8,12 +10,12 @@ class Services extends Component {
     }
     
     componentDidMount() {
-        this.getAllServicesSameType();
+        this.allServicesSameType();
     }
 
-    getAllServicesSameType = () => {
+    allServicesSameType = () => {
         const { params } = this.props.match;
-        routes.getAllServicesSameType(params.categoryID)
+        ServiceTypeService.getAllServicesSameType(params.categoryID)
         .then(responseFromApi => {
             this.setState({
               servicesType: responseFromApi,
@@ -27,11 +29,14 @@ class Services extends Component {
 
         return( 
         <>
+        <Navbar/>
         <div>
             {this.state.services.length > 0 && this.state.services.map((service) => {
                 return (
                     <div key={service._id}>
-                        <h3>{service.serviceName}</h3>
+                    <Link to={`/services/${service._id}`}>
+                            <h3>{service.serviceName}</h3>
+                        </Link>
                     </div>
                 )
             })}

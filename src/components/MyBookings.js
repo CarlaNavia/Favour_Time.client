@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookingService from "../lib/booking-service";
+import BookingList from './BookingList';
 
 
 class MyBookings extends Component {
@@ -13,7 +14,7 @@ class MyBookings extends Component {
     BookingService.getBookingsByUserID(this.props.userId)
     .then((bookings) =>
       this.setState({ listOfBookings: bookings })
-      
+
     );
   }
 
