@@ -24,7 +24,8 @@ class BookingService {
 
   newBooking(serviceID){
     console.log(serviceID, 'serviceID')
-    return this.axios.post(`/bookings/${serviceID}`).then(({ data }) => data);
+    return this.axios.post(`/bookings/${serviceID}`)
+    .then(({ data }) => data);
   }
   
 }

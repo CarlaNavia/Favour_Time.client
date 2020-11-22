@@ -17,8 +17,7 @@ class MyBookings extends Component {
 
     );
   }
-
-
+  
   render() {
     return (
       <div>
