@@ -21,6 +21,11 @@ class UserService {
       return this.axios.put(`/auth/profile/${userId}`, currentUser)
       .then((data) => data)
   }
+
+  buyCredits(credits) {
+    return this.axios.post(`/auth/buy`, {credits})
+    .then ((data) => data)
+  }
 }
 const axiosRequestFunctions = new UserService();
 

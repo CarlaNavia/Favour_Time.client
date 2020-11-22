@@ -12,6 +12,7 @@ import EditProfile from "./pages/EditProfile";
 import PrivateRoute from "./components/PrivateRoute";
 import ServiceType from './components/ServiceType';
 import Services from './pages/Services';
+import Packs from './pages/Packs';
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
             <PrivateRoute exact path='/private' component={Private} />
             <PrivateRoute exact path='/profile' component={Profile} />
             <PrivateRoute exact path='/profile/edit/:userId' component={EditProfile} />
+            <PrivateRoute exact path='/packs' component={Packs} />
             
           </Switch>
         
