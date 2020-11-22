@@ -33,8 +33,12 @@ class BookingService {
     return this.axios.get(`/servicesOwner/${userId}`).then(({ data }) => data);
   }
 
-  deleteTheService(userId) {
-    return this.axios.delete(`/services/${userId}`).then(({ data }) => data);
+  deleteTheService(serviceId) {
+    return this.axios.delete(`/services/${serviceId}`).then(({ data }) => data);
+  }
+
+  editTheService(serviceId) {
+    return this.axios.put(`/services//${serviceId}`).then(({ data }) => data);
   }
 }
 

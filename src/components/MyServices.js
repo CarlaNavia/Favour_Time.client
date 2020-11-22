@@ -17,10 +17,13 @@ class MyServices extends Component {
   }
 
   deleteService = (serviceId) => {
-    BookingService.deleteTheService(serviceId)
-      .then(() => {
-        this.getMyServices()
-      });
+    BookingService.deleteTheService(serviceId).then(() => {
+      this.getMyServices();
+    });
+  };
+
+  editService = (serviceId) => {
+      BookingService.editTheService(serviceId)
   }
 
   render() {
@@ -31,8 +34,9 @@ class MyServices extends Component {
           "Unfortunately you have not any service uploaded yet."}
         {this.state.listOfServices.length > 0 && (
           <ServiceList
-            onDelete={this.deleteService}
             services={this.state.listOfServices}
+            editServices = {this.editService}
+            onDelete={this.deleteService}
           />
         )}
       </div>
