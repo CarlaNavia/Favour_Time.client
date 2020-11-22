@@ -6,6 +6,7 @@ import MyReviews from "../components/MyReviews";
 import UserDetails from "../components/UserDetails";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import MyServices from "../components/MyServices";
 
 class Profile extends Component {
   getUserRating() {
@@ -23,7 +24,8 @@ class Profile extends Component {
   }
 
   getImageProfile() {
-    if (this.props.user.imageProfile !== "") {
+    
+    if (this.props.user.imageProfile) {
       return this.props.user.imageProfile;
     } else {
       return "/default-user-image.png";
@@ -70,7 +72,7 @@ class Profile extends Component {
             <UserDetails user={this.props.user} />
           </TabPanel>
           <TabPanel>
-            <h4>My services panel</h4>
+            <MyServices userId={this.props.user._id} />
           </TabPanel>
         </Tabs>
       </div>
