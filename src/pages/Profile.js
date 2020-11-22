@@ -10,7 +10,7 @@ import "react-tabs/style/react-tabs.css";
 class Profile extends Component {
   getUserRating() {
     const totalReviews = this.props.user.review.length;
-    if (this.props.user.review.length == 0) {
+    if (this.props.user.review.length === 0) {
       return 0;
     }
     const result = this.props.user.review.reduce(
@@ -36,7 +36,7 @@ class Profile extends Component {
         <h3>{this.props.user.name}</h3>
         <p>{this.props.user.credits} credits</p>
 
-        <img src={this.getImageProfile()} />
+        <img src={this.getImageProfile()} alt="profile"/>
         <p>{this.getUserRating()}/5</p>
 
         <Tabs>
