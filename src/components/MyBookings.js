@@ -14,7 +14,7 @@ class MyBookings extends Component {
     BookingService.getBookingsByUserID(this.props.userId)
     .then((bookings) =>
       this.setState({ listOfBookings: bookings })
-      
+
     );
   }
 

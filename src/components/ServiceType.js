@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withAuth } from "../lib/AuthProvider";
-import routes from '../lib/auth-service';
+import ServiceTypeService from '../lib/serviceType-service';
 import { Link } from "react-router-dom";
 
 class ServiceType extends Component {
@@ -10,7 +10,7 @@ class ServiceType extends Component {
     }
 
     allServices = () => {
-        routes.getAllServices()
+        ServiceTypeService.getAllServices()
         .then(responseFromApi => {
           this.setState({
             serviceType: responseFromApi
