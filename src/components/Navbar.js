@@ -4,22 +4,29 @@ import { withAuth } from "../lib/AuthProvider";
 // import Search from './Search';
 
 class Navbar extends Component {
- 
+
+  getImageProfile() {
+    if (this.props.user.imageProfile === "") {
+      return this.props.user.imageProfile;
+    } else {
+      return "/default-user-image.png";
+    }
+  }
   render() {
     const { user, logout, isLoggedin } = this.props;
     return (
       <nav className='navbar'>
-        <Link to={"/"} id='home-btn'>
-          <h4>Home</h4>
-        </Link>
         {isLoggedin ? (
           <>
+          <Link to={"/profile"} >
+          <img src={this.getImageProfile()} alt="profile" style={{width: 50,  borderRadius: 50}}/>
+          </Link>
             <p className='navbar-user'>
             name: {user.name} <br/>
             credits: {user.credits} credits
-            
             </p>
             <button className='navbar-button' onClick={logout}>Logout</button>
+            <Link to={"/"}>Logo para volver siempre al home</Link>
           </>
         ) : (
           <>

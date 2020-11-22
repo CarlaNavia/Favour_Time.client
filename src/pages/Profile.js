@@ -6,11 +6,12 @@ import MyReviews from "../components/MyReviews";
 import UserDetails from "../components/UserDetails";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { Link } from "react-router-dom";
 
 class Profile extends Component {
   getUserRating() {
     const totalReviews = this.props.user.review.length;
-    if (this.props.user.review.length == 0) {
+    if (this.props.user.review.length === 0) {
       return 0;
     }
     const result = this.props.user.review.reduce(
@@ -23,7 +24,7 @@ class Profile extends Component {
   }
 
   getImageProfile() {
-    if (this.props.user.imageProfile !== "") {
+    if (this.props.user.imageProfile === "") {
       return this.props.user.imageProfile;
     } else {
       return "/default-user-image.png";
@@ -33,10 +34,11 @@ class Profile extends Component {
   render() {
     return (
       <div>
+        <button onClick={this.props.history.goBack}>Back</button>   
         <h3>{this.props.user.name}</h3>
         <p>{this.props.user.credits} credits</p>
 
-        <img src={this.getImageProfile()} />
+        <img src={this.getImageProfile()} alt="profile" style={{width: 50,  borderRadius: 50}}/>
         <p>{this.getUserRating()}/5</p>
 
         <Tabs>

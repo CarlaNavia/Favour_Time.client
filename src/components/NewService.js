@@ -9,9 +9,9 @@ class NewService extends Component {
         imageService: '',
         description: '',
         serviceType: '',
-        availableTime: 'morning',
+        availableTime: '',
         addressToBeHeld:'',
-        credits: 0,
+        credits: '',
       };
       handleChange = (event) => {
         let { name, value } = event.target
@@ -19,8 +19,6 @@ class NewService extends Component {
       };
   
       handleFileUpload = async (e) => {
-        //   const uploadData = new FormData();
-        //   uploadData.append("imageService", e.target.files[0]);
           try {
             const files = e.target.files[0];
             const res = await ServiceTypeService.handleUpload(files);    
@@ -30,24 +28,23 @@ class NewService extends Component {
           }
         };
 
-    handleFormSubmit = (event) => {
-      event.preventDefault();
-
-        ServiceTypeService.newService(this.state)
-        .then(() => {
-            this.setState({
-                serviceName: '',
-                imageService: '',
-                description: '',
-                serviceType: '',
-                availableTime: 'morning',
-                addressToBeHeld:'',
-                credits: 0,
-            });
-        })
-        .catch(error => console.log(error));
-    };
-  
+    handleFormSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          await ServiceTypeService.newService(this.state);
+          this.setState({
+            serviceName: '',
+            imageService: '',
+            description: '',
+            serviceType: '',
+            availableTime: '',
+            addressToBeHeld:'',
+            credits: '',
+        });
+        } catch (error) {
+            console.log("Error while adding the service: ", error);
+        }
+      };
     render() {
     
       return (
@@ -73,7 +70,7 @@ class NewService extends Component {
                 </select><br/>
 
                 <label>Image:</label><br/>
-                <input type="file" name="imageService" value={this.state.imageService} onChange={(e) => this.handleFileUpload(e)}/><br/>
+                <input type="file" onChange={(e) => this.handleFileUpload(e)}/><br/>
                 
                 <label>Credits:</label><br/>
                 <input type="number" name="credits" value={this.state.credits} onChange={(e) => this.handleChange(e)}/><br/>

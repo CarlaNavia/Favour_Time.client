@@ -27,18 +27,13 @@ class App extends Component {
             <Route exact path='/login' component={Login} />
             <Route exact path='/servicetype' component={ServiceType} />
             <Route exact path='/servicetype/:categoryID' component={Services} />
-<<<<<<< HEAD
             <Route exact path='/faqs' component={Faqs} />
             <PrivateRoute exact path='/private' component={Private} />
             <PrivateRoute exact path='/profile' component={Profile} />
             <PrivateRoute exact path='/profile/edit/:userId' component={EditProfile} />
             <PrivateRoute exact path='/packs' component={Packs} />
-            
-=======
             <PrivateRoute exact path='/services/:serviceID' component={ServiceDetails} />
-            <PrivateRoute exact path='/private' component={Private} />
-            <PrivateRoute exact path='/profile' component={Profile} />
->>>>>>> b20da60c557644a1eb7866ae9613f63c1df7a567
+          
           </Switch>
         </div>
       </AuthProvider>

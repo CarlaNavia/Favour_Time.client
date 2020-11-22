@@ -26,11 +26,17 @@ class BookingService {
     .then(({data}) => data)
   }
 
-  newBooking(serviceID){
-    console.log(serviceID, 'serviceID')
-    return this.axios.post(`/bookings/${serviceID}`)
-    .then(({ data }) => data);
-  }
+  newBooking = async (serviceID, info) => {
+    console.log("new thing is: ", serviceID);
+    console.log("info ", info);
+    try {
+      const res = await this.axios.post(`/bookings/${serviceID}`, info);
+      console.log(res.data , 'res')
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
   
 }
 

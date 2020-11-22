@@ -21,6 +21,7 @@ class Services extends Component {
               servicesType: responseFromApi,
               services: responseFromApi.services
             });
+            
         })
         .catch(error => console.log(error));
       };
