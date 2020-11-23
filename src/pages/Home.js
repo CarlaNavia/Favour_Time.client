@@ -4,11 +4,11 @@ import NewService from '../components/NewService';
 import ServiceType from '../components/ServiceType';
 import { withAuth } from "../lib/AuthProvider";
 
+
 class Home extends Component {
     state = {
       showForm: false,
     }
-
 
   toggleForm = () => {
     this.setState({showForm: !this.state.showForm});
@@ -19,7 +19,8 @@ class Home extends Component {
         return (
             <>
             <Navbar/>
-            <ServiceType/>
+            
+            <ServiceType />
             <div>
                 <button onClick={this.toggleForm}>New Service</button>
                 { this.state.showForm 

@@ -7,7 +7,7 @@ class ServiceTypeService {
           withCredentials: true,
         });
       }
-      getAllServices(){
+      getAllServiceType(){
         return this.axios.get(`/servicetype`).then(({ data }) => data);
       }
     
@@ -18,6 +18,11 @@ class ServiceTypeService {
       getServiceDetail(serviceID){
         return this.axios.get(`/services/${serviceID}`).then(({ data }) => data);
       }
+      
+      getAllServices(){
+        return this.axios.get(`/allservices`).then(({ data }) => data);
+      }
+      
 
       handleUpload = async (theImage) => {
         try {

@@ -9,8 +9,8 @@ class ServiceType extends Component {
         serviceType: [],
     }
 
-    allServices = () => {
-        ServiceTypeService.getAllServices()
+    allServiceType = () => {
+        ServiceTypeService.getAllServiceType()
         .then(responseFromApi => {
           this.setState({
             serviceType: responseFromApi
@@ -20,7 +20,7 @@ class ServiceType extends Component {
     };
 
     componentDidMount() {
-    this.allServices();
+    this.allServiceType();
     }
 
  

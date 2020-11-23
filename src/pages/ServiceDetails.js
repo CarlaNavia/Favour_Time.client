@@ -43,8 +43,14 @@ class ServiceDetails extends Component {
             const time = this.state.time;
             const extraInformation = this.state.extraInformation;
 
+            let today = new Date();
+            let selected = new Date(date);
+            if (selected < today){
+                console.log('You cannot select dates in the past')
+            }
+
             try {
-            const res = await BookingService.newBooking(params.serviceID, {date, time, extraInformation});
+            await BookingService.newBooking(params.serviceID, {date, time, extraInformation});
                 this.setState({
                     date: '',
                     time: '',
@@ -54,10 +60,17 @@ class ServiceDetails extends Component {
                 console.log("Error while adding the service: ", error);
             }
         };
-   
+        getImageProfile() {
+            if (this.state.imageService === "") {
+              return this.state.imageService;
+            } else {
+              return "/default-user-image.png";
+            }
+          }
 
 
     render (){
+        console.log(this.state.serviceDetail, 'detail')
         return( 
         <>
         <Navbar/>
@@ -68,6 +81,7 @@ class ServiceDetails extends Component {
                     <h3>address:{this.state.serviceDetail.addressToBeHeld}</h3> 
                     <h3>credits: {this.state.serviceDetail.credits}</h3> 
                     <h3>Owner of the service: {this.state.owner.name}</h3>
+                    <img src={this.getImageProfile()} alt="service" style={{width: 50,  borderRadius: 50}}/>
             </div>
  
             <form onSubmit={this.handleFormSubmit}>
@@ -82,6 +96,19 @@ class ServiceDetails extends Component {
 
                     <input type="submit" value="Submit"/>
             </form>
+
+            <div >
+                <img src="https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=ARBdP22IMLZLKQCiI3FO
+                &co=Spain
+                &ci={this.state.serviceDetail.cityToBeHeld}
+                &s={this.state.serviceDetail.addressToBeHeld}
+                &n={this.state.serviceDetail.streetNumberToBeHeld}
+                &z=17
+                &h=800
+                &ppi=250
+                &w=1280
+                &f=1" alt="business map"/>
+            </div>
         </>
         );
     }

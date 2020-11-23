@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-// import Search from './Search';
+import Search from '../components/Search';
 
 class Navbar extends Component {
 
@@ -27,6 +27,7 @@ class Navbar extends Component {
             </p>
             <button className='navbar-button' onClick={logout}>Logout</button>
             <Link to={"/"}>Logo para volver siempre al home</Link>
+            <Search />
           </>
         ) : (
           <>
@@ -37,6 +38,7 @@ class Navbar extends Component {
             <Link to='/signup'>
               <button className='navbar-button'>Sign Up</button>
             </Link>
+            <Search />
           </>
         )}
       </nav>

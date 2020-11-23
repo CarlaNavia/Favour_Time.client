@@ -10,7 +10,9 @@ class NewService extends Component {
         description: '',
         serviceTypeID: '',
         availableTime: '',
+        cityToBeHeld: '',
         addressToBeHeld:'',
+        streetNumberToBeHeld: '',
         credits: '',
         serviceTypeSelect: []
       };
@@ -34,7 +36,7 @@ class NewService extends Component {
         };
 
       allServicesSelect = () => {
-          ServiceTypeService.getAllServices()
+          ServiceTypeService.getAllServiceType()
           .then(responseFromApi => {
             this.setState({
               serviceTypeSelect: responseFromApi
@@ -54,8 +56,11 @@ class NewService extends Component {
             description: '',
             serviceTypeID: '',
             availableTime: '',
+            cityToBeHeld: '',
             addressToBeHeld:'',
+            streetNumberToBeHeld: '',
             credits: '',
+
         });
         } catch (error) {
             console.log("Error while adding the service: ", error);
@@ -68,11 +73,12 @@ class NewService extends Component {
           <>
             <form onSubmit={this.handleFormSubmit}>
                 <label>Service Name:</label><br/>
-                <input type="text" name="serviceName" value={this.state.serviceName} onChange={(e) => this.handleChange(e)}/><br/>
+                <input type="text" name="serviceName" value={this.state.serviceName} onChange={(e) => this.handleChange(e)} required/><br/>
 
                 <label>Category:</label><br/>
                 {/* <input type="text" name="serviceType" value={this.state.serviceType} onChange={(e) => this.handleChange(e)}/><br/> */}
-                <select name="serviceTypeID" value={this.state.serviceTypeID} onChange={(e) => this.handleChange(e)}>
+                <select name="serviceTypeID" value={this.state.serviceTypeID} onChange={(e) => this.handleChange(e)} required>
+                <option value=""></option>
                 {this.state.serviceTypeSelect.map((type) => {
                   return (
                         <option key={type._id} value={type._id}>{type.serviceName}</option>
@@ -81,23 +87,30 @@ class NewService extends Component {
                 </select><br/>
 
                 <label>Description:</label><br/>
-                <textarea type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)}/><br/>
+                <textarea type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} required/><br/>
+
+                <label>City:</label><br/>
+                <input type="text" name="cityToBeHeld" value={this.state.cityToBeHeld} onChange={(e) => this.handleChange(e)} required/><br/>
                 
-                <label>Address To Be Held:</label><br/>
-                <input type="text" name="addressToBeHeld" value={this.state.addressToBeHeld} onChange={(e) => this.handleChange(e)}/><br/>
+                <label>Address:</label><br/>
+                <input type="text" name="addressToBeHeld" value={this.state.addressToBeHeld} onChange={(e) => this.handleChange(e)} required/><br/>
+
+                <label>Street Number:</label><br/>
+                <input type="text" name="streetNumberToBeHeld" value={this.state.streetNumberToBeHeld} onChange={(e) => this.handleChange(e)} required/><br/>
 
                 <label>Available Time:</label><br/>
-                <select name="availableTime" value={this.state.availableTime} onChange={(e) => this.handleChange(e)}>
+                <select name="availableTime" value={this.state.availableTime} onChange={(e) => this.handleChange(e)} required>
+                    <option value=""></option>
                     <option value="morning">Morning</option>
                     <option value="afternoon">Afternoon</option>
                     <option value="night">Night</option>
                 </select><br/>
 
                 <label>Image:</label><br/>
-                <input type="file" onChange={(e) => this.handleFileUpload(e)}/><br/>
+                <input type="file" onChange={(e) => this.handleFileUpload(e)} /><br/>
                 
                 <label>Credits:</label><br/>
-                <input type="number" name="credits" value={this.state.credits} onChange={(e) => this.handleChange(e)}/><br/>
+                <input type="number" name="credits" value={this.state.credits} onChange={(e) => this.handleChange(e)} required/><br/>
 
                 <input type="submit" value="Submit"/>
             </form>
