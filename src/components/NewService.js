@@ -8,11 +8,16 @@ class NewService extends Component {
         serviceName: '',
         imageService: '',
         description: '',
-        serviceType: '',
+        serviceTypeID: '',
         availableTime: '',
         addressToBeHeld:'',
         credits: '',
+        serviceTypeSelect: []
       };
+      componentDidMount() {
+        this.allServicesSelect();
+      }
+
       handleChange = (event) => {
         let { name, value } = event.target
         this.setState({ [name]: value})
@@ -28,6 +33,17 @@ class NewService extends Component {
           }
         };
 
+      allServicesSelect = () => {
+          ServiceTypeService.getAllServices()
+          .then(responseFromApi => {
+            this.setState({
+              serviceTypeSelect: responseFromApi
+              });
+          })
+          .catch(error => console.log(error));
+      };
+
+
     handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -36,7 +52,7 @@ class NewService extends Component {
             serviceName: '',
             imageService: '',
             description: '',
-            serviceType: '',
+            serviceTypeID: '',
             availableTime: '',
             addressToBeHeld:'',
             credits: '',
@@ -45,8 +61,9 @@ class NewService extends Component {
             console.log("Error while adding the service: ", error);
         }
       };
+
+
     render() {
-    
       return (
           <>
             <form onSubmit={this.handleFormSubmit}>
@@ -54,8 +71,15 @@ class NewService extends Component {
                 <input type="text" name="serviceName" value={this.state.serviceName} onChange={(e) => this.handleChange(e)}/><br/>
 
                 <label>Category:</label><br/>
-                <input type="text" name="serviceType" value={this.state.serviceType} onChange={(e) => this.handleChange(e)}/><br/>
-                
+                {/* <input type="text" name="serviceType" value={this.state.serviceType} onChange={(e) => this.handleChange(e)}/><br/> */}
+                <select name="serviceTypeID" value={this.state.serviceTypeID} onChange={(e) => this.handleChange(e)}>
+                {this.state.serviceTypeSelect.map((type) => {
+                  return (
+                        <option key={type._id} value={type._id}>{type.serviceName}</option>
+                  )
+                })}
+                </select><br/>
+
                 <label>Description:</label><br/>
                 <textarea type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)}/><br/>
                 

@@ -34,15 +34,17 @@ class ServiceDetails extends Component {
         .catch(error => console.log(error));
       };
 
+
+
     handleFormSubmit = async (e) => {
             e.preventDefault();
             const { params } = this.props.match;
-            const date = this.state.date;
+            const date = new Date(this.state.date).toDateString();
             const time = this.state.time;
             const extraInformation = this.state.extraInformation;
+
             try {
             const res = await BookingService.newBooking(params.serviceID, {date, time, extraInformation});
-            console.log("added", res);
                 this.setState({
                     date: '',
                     time: '',

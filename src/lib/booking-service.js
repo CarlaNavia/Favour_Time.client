@@ -7,6 +7,7 @@ class BookingService {
           withCredentials: true,
         });
       }
+      
   getBookingsByUserID(userId) {
     return this.axios.get(`/clientbooking/${userId}`)
     .then(({ data }) => data);
@@ -21,17 +22,15 @@ class BookingService {
     return this.axios.put(`/bookings/${bookingId}/${status}`)
     .then(({ data }) => data);
   }
+
   getReviewsByUserID(userId) {
     return this.axios.get(`/reviews/${userId}`)
     .then(({data}) => data)
   }
 
   newBooking = async (serviceID, info) => {
-    console.log("new thing is: ", serviceID);
-    console.log("info ", info);
     try {
       const res = await this.axios.post(`/bookings/${serviceID}`, info);
-      console.log(res.data , 'res')
       return res.data;
     } catch (error) {
       console.log(error);
