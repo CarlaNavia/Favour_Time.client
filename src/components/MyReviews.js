@@ -25,7 +25,7 @@ class MyReviews extends Component {
         {this.state.listOfReviews.length > 0 &&
           this.state.listOfReviews.map((eachReview, index) => {
             return (
-              <div>
+              <div key={eachReview._id}>
                 <p>{eachReview.description}</p>
                 <p>{eachReview.rating}/5</p>
                 <p>{eachReview.author.name}</p>

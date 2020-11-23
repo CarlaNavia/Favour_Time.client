@@ -41,6 +41,10 @@ class BookingService {
   editTheService(serviceId, form) {
     return this.axios.put(`/services/${serviceId}`, form).then(({ data }) => data);
   }
+
+  addANewReview(bookingId, form) {
+    return this.axios.post(`/reviews/${bookingId}`, form).then(({ data }) => data);
+  }
 }
 
 const axiosRequestFunctions = new BookingService();
