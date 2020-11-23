@@ -24,7 +24,6 @@ class Profile extends Component {
   }
 
   getImageProfile() {
-    
     if (this.props.user.imageProfile) {
       return this.props.user.imageProfile;
     } else {
@@ -35,13 +34,25 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.history.goBack}>Back</button>   
-        <h3>{this.props.user.name}</h3>
-        <p>{this.props.user.credits} credits</p>
+        <div class="columns is-mobile">
+          <div class="column is-three-quarters">
+            <h3>{this.props.user.name}</h3>
+            <p>{this.props.user.credits} credits</p>
+          </div>
+          <div class="column"><img
+          src={this.getImageProfile()}
+          alt="profile"
+          style={{ width: 50, borderRadius: 50 }}
+        />
+        <p>{this.getUserRating()}/5</p></div>
+        </div>
+        <div class="columns">
+          <div class="column">First column</div>
+        </div>
+        <button onClick={this.props.history.goBack}>Back</button>
 
-        <img src={this.getImageProfile()} alt="profile" style={{width: 50,  borderRadius: 50}}/>
-        <p>{this.getUserRating()}/5</p>
-
+        
+        <div class="container"> 
         <Tabs>
           <TabList>
             <Tab>
@@ -76,6 +87,7 @@ class Profile extends Component {
             <MyServices userId={this.props.user._id} />
           </TabPanel>
         </Tabs>
+        </div>
       </div>
     );
   }
