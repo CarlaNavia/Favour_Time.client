@@ -33,7 +33,7 @@ class BookingList extends Component {
               <p>{eachBooking.status}</p>
               <p>{eachBooking.service.description}</p>
               {this.props.isOwner && eachBooking.status==="pending" && this.renderButtons(eachBooking._id)}
-              {!this.props.isOwner && eachBooking.review===null && eachBooking.status ==="accepted" && this.renderReviewButton(eachBooking._id)}
+              {!this.props.isOwner && !eachBooking.review && eachBooking.status ==="accepted" && this.renderReviewButton(eachBooking._id)}
             </li>
           );
         })}

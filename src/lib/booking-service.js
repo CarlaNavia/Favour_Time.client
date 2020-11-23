@@ -50,6 +50,10 @@ class BookingService {
       console.log(error);
     }
   };
+
+  getOneBooking(bookingId) {
+    return this.axios.get(`/booking/${bookingId}`).then(({ data }) => data);
+  }
   
 }
 
