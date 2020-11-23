@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ServiceTypeService from "../lib/serviceType-service";
 import { withAuth } from "../lib/AuthProvider";
 
+
 class NewService extends Component {
   state = {
     serviceName: "",

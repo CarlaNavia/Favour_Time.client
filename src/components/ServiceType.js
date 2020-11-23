@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withAuth } from "../lib/AuthProvider";
 import ServiceTypeService from '../lib/serviceType-service';
 import { Link } from "react-router-dom";
+import Icon from "./Icon"
 
 class ServiceType extends Component {
     
@@ -31,6 +32,7 @@ class ServiceType extends Component {
                 return (
                     <div key={type._id}>
                         <Link to={`/servicetype/${type._id}`}>
+                        <Icon code={type.iconCode}/>
                             <h3>{type.serviceName}</h3>
                         </Link>
                     </div>
