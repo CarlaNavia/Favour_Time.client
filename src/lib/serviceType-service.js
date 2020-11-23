@@ -7,7 +7,7 @@ class ServiceTypeService {
           withCredentials: true,
         });
       }
-      getAllServices(){
+      getAllServiceType(){
         return this.axios.get(`/servicetype`).then(({ data }) => data);
       }
     
@@ -19,30 +19,30 @@ class ServiceTypeService {
         return this.axios.get(`/services/${serviceID}`).then(({ data }) => data);
       }
 
-      newService(){
-        return this.axios.post(`/newservice`).then(({ data }) => data);
+      getAllServices(){
+        return this.axios.get(`/allservices`).then(({ data }) => data);
       }
+      
 
       handleUpload = async (theImage) => {
         try {
-          console.log(theImage, 'theimage')
           const uploadData = new FormData();
           uploadData.append("file", theImage);
-          const res = await this.axios.post("/api/upload", uploadData, {headers: {'Content-Type': 'multipart/form-data'}});
+          const res = await this.axios.post("/api/uploadservice", uploadData, {headers: {'Content-Type': 'multipart/form-data'}});
+          return res.data;
+        } catch (error) {
+          console.log(error);
+        }
+      };    
+      
+      newService = async (service) => {
+        try {
+          const res = await this.axios.post(`/newservice`, service);
           return res.data;
         } catch (error) {
           console.log(error);
         }
       };
-      // handleUpload(image) {
-      //   const formData = new FormData();
-      //   formData.append("file", image);
-      //   return this.axios.post(`/api/upload`, formData, {
-      //       headers: {'Content-Type': 'multipart/form-data'}
-      //   })
-      //   .then(({ data }) => data);
-      // }
-      
 }
 
 const axiosRequestFunctions = new ServiceTypeService();

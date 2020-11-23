@@ -35,10 +35,11 @@ class Profile extends Component {
   render() {
     return (
       <div>
+        <button onClick={this.props.history.goBack}>Back</button>   
         <h3>{this.props.user.name}</h3>
         <p>{this.props.user.credits} credits</p>
 
-        <img src={this.getImageProfile()} alt="profile"/>
+        <img src={this.getImageProfile()} alt="profile" style={{width: 50,  borderRadius: 50}}/>
         <p>{this.getUserRating()}/5</p>
 
         <Tabs>

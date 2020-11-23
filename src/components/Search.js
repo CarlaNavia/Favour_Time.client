@@ -1,17 +1,49 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
-import List from './List';
-
+import ServiceTypeService from '../lib/serviceType-service';
+import { Link } from "react-router-dom";
 
 class Search extends Component {
     state = { 
-        search: ""
+        search: "",
+        searchList: [],
+        filteredServiceList: [],
     }
+
+  componentDidMount() {
+    this.allServices();
+    }
+  
+  filterService = (searchTerm) => {
+    const searchedTerm = searchTerm.toLowerCase();
+    const filteredList = [...this.state.searchList].filter( serviceObj => {
+      return serviceObj.serviceName.toLowerCase().includes(searchedTerm);
+    })
+    console.log(filteredList, 'filteredList')
+    this.setState({filteredServiceList: filteredList})
+  }
+  
+  allServices = () => {
+    ServiceTypeService.getAllServices()
+    .then(responseFromApi => {
+      this.setState({
+        searchList: responseFromApi,
+        });
+    })
+    .catch(error => console.log(error));
+  };
 
   handleChange = e => {
     const { name, value } = e.target;
-    this.setState({[name]: value})
-    this.props.searchServices(value);
+
+    if(value){
+      this.setState({[name]: value})
+      this.filterService(this.state.search)
+    }else{
+      this.setState({
+        filteredServiceList: [],
+        search: ''
+      })
+    }
   }
 
   render() {
@@ -19,13 +51,23 @@ class Search extends Component {
       <div>
         <input 
           type="text" 
-          className="input search-bar" 
           name="search" 
           placeholder="Search" 
           value={this.state.search} 
-          onChange={this.handleChange} 
+          onChange={(e)=> this.handleChange(e)} 
         />
-        <List services={this.state.services}/>
+        <ul>
+        {this.state.filteredServiceList ? this.state.filteredServiceList.map((service, index)=> {
+          return(
+              <li key={index}>
+              <Link to={`/servicetype/${service.serviceType && service.serviceType._id}`}>
+                {service.serviceName} <br/>
+                {service.serviceType && service.serviceType.serviceName}
+              </Link>
+              </li>
+          )
+        }) : "" }
+        </ul>
       </div>
     )
   }
