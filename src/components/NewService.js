@@ -60,8 +60,8 @@ class NewService extends Component {
             addressToBeHeld:'',
             streetNumberToBeHeld: '',
             credits: '',
-
         });
+        this.props.form({showForm: !this.state.showForm})
         } catch (error) {
             console.log("Error while adding the service: ", error);
         }

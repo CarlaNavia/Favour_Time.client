@@ -22,9 +22,9 @@ class Home extends Component {
             
             <ServiceType />
             <div>
-                <button onClick={this.toggleForm}>New Service</button>
+                <button onClick={this.toggleForm}>{this.state.showForm ? 'Hide Form' : 'New Service'}</button>
                 { this.state.showForm 
-                  ? <NewService /> 
+                  ? <NewService form={this.toggleForm}/> 
                   : null
                 }
               </div>

@@ -61,8 +61,8 @@ class ServiceDetails extends Component {
             }
         };
         getImageProfile() {
-            if (this.state.imageService === "") {
-              return this.state.imageService;
+            if (this.state.serviceDetail.imageService === "") {
+              return this.state.serviceDetail.imageService;
             } else {
               return "/default-user-image.png";
             }
@@ -98,16 +98,19 @@ class ServiceDetails extends Component {
             </form>
 
             <div >
-                <img src="https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=ARBdP22IMLZLKQCiI3FO
+                {this.state.serviceDetail ? 
+                <img src={`https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=4lDY5DXh7ZW1sLWz2IwQLWnf2vXf_GibFkqD9gErzu0
                 &co=Spain
-                &ci={this.state.serviceDetail.cityToBeHeld}
-                &s={this.state.serviceDetail.addressToBeHeld}
-                &n={this.state.serviceDetail.streetNumberToBeHeld}
+                &ci=${this.state.serviceDetail.cityToBeHeld}
+                &s=${this.state.serviceDetail.addressToBeHeld}
+                &n=${this.state.serviceDetail.streetNumberToBeHeld}
                 &z=17
                 &h=800
                 &ppi=250
-                &w=1280
-                &f=1" alt="business map"/>
+                &w=1000
+                &f=1`} alt="business map"/>
+                : null
+                } 
             </div>
         </>
         );

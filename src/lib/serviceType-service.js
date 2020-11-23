@@ -18,7 +18,7 @@ class ServiceTypeService {
       getServiceDetail(serviceID){
         return this.axios.get(`/services/${serviceID}`).then(({ data }) => data);
       }
-      
+
       getAllServices(){
         return this.axios.get(`/allservices`).then(({ data }) => data);
       }
@@ -28,7 +28,7 @@ class ServiceTypeService {
         try {
           const uploadData = new FormData();
           uploadData.append("file", theImage);
-          const res = await this.axios.post("/api/upload", uploadData, {headers: {'Content-Type': 'multipart/form-data'}});
+          const res = await this.axios.post("/api/uploadservice", uploadData, {headers: {'Content-Type': 'multipart/form-data'}});
           return res.data;
         } catch (error) {
           console.log(error);
