@@ -15,6 +15,7 @@ import Packs from './pages/Packs';
 import Faqs from './pages/Faqs';
 import ServiceDetails from './pages/ServiceDetails';
 import Home from './pages/Home';
+import EditService from "./pages/EditService";
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
             <PrivateRoute exact path='/private' component={Private} />
             <PrivateRoute exact path='/profile' component={Profile} />
             <PrivateRoute exact path='/profile/edit/:userId' component={EditProfile} />
+            <PrivateRoute exact path='/service/edit/:serviceId' component={EditService} />
             <PrivateRoute exact path='/packs' component={Packs} />
             
             <PrivateRoute exact path='/services/:serviceID' component={ServiceDetails} />

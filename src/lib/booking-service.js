@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 class BookingService {
   constructor() {
     this.axios = axios.create({
@@ -37,8 +38,8 @@ class BookingService {
     return this.axios.delete(`/services/${serviceId}`).then(({ data }) => data);
   }
 
-  editTheService(serviceId) {
-    return this.axios.put(`/services//${serviceId}`).then(({ data }) => data);
+  editTheService(serviceId, form) {
+    return this.axios.put(`/services/${serviceId}`, form).then(({ data }) => data);
   }
 }
 

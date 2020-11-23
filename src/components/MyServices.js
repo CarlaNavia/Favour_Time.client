@@ -21,10 +21,12 @@ class MyServices extends Component {
       this.getMyServices();
     });
   };
-
-  editService = (serviceId) => {
-      BookingService.editTheService(serviceId)
-  }
+//   editServices = (serviceId) => {
+//       BookingService.editTheService(serviceId).then(() => {
+//         this.getMyServices();
+//       });
+//   }
+ 
 
   render() {
     return (
@@ -35,8 +37,8 @@ class MyServices extends Component {
         {this.state.listOfServices.length > 0 && (
           <ServiceList
             services={this.state.listOfServices}
-            editServices = {this.editService}
             onDelete={this.deleteService}
+            // onEdit={this.editServices}
           />
         )}
       </div>
