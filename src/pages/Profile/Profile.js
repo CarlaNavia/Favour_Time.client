@@ -8,7 +8,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import MyServices from "../../components/MyServices";
 import { Link } from "react-router-dom";
-import "./Profile.css"
+import "./Profile.css";
 
 class Profile extends Component {
   getUserRating() {
@@ -75,6 +75,7 @@ class Profile extends Component {
         <div className="columns">
           <div className="column ">
             <button onClick={this.props.history.goBack}>Back</button>
+            <Link to={"/edit-profile"}>Edit Profile</Link>
             <Link to={"/logout"}>Logout</Link>
 
             <div className="container">
@@ -89,9 +90,9 @@ class Profile extends Component {
                   <Tab>
                     <p>My Reviews</p>
                   </Tab>
-                  <Tab>
+                  {/* <Tab>
                     <p>My Profile</p>
-                  </Tab>
+                  </Tab> */}
                   <Tab>
                     <p>My Services</p>
                   </Tab>
@@ -105,9 +106,9 @@ class Profile extends Component {
                 <TabPanel>
                   <MyReviews userId={this.props.user._id} />
                 </TabPanel>
-                <TabPanel>
+                {/* <TabPanel>
                   <UserDetails user={this.props.user} />
-                </TabPanel>
+                </TabPanel> */}
                 <TabPanel>
                   <MyServices userId={this.props.user._id} />
                 </TabPanel>

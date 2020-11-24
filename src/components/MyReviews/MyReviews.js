@@ -8,6 +8,7 @@ class MyReviews extends Component {
   };
   componentDidMount() {
     this.getMyReviews();
+
   }
 
   getMyReviews() {
@@ -15,31 +16,35 @@ class MyReviews extends Component {
       this.setState({ listOfReviews: reviews })
     );
   }
+
+
+
   render() {
-    console.log(this.state.listOfReviews);
+    console.log(this.state.listOfReviews && this.state.listOfReviews.rating)
     return (
       <div>
-        <h1>My reviews:</h1>
+        <h1 className="h1_reviews">MY REVIEWS</h1>
         {this.state.listOfReviews.length === 0 &&
           "Unfortunately you don't have any review yet."}
 
         {this.state.listOfReviews.length > 0 &&
           this.state.listOfReviews.map((eachReview, index) => {
             return (
-              <div key={eachReview._id} className="columns is-mobile">
-                <div class="column">
+              <div key={eachReview._id} className="columns is-mobile border">
+              
+                <div className="column is-one-fifth-desktop">
                   <img
                     src={eachReview.author.imageProfile}
                     alt="author_profile"
                     className="profile_img"
                   />
                 </div>
-                <div class="column">
-                  <h3>{eachReview.author.name}</h3>{" "}
-                  <p>{eachReview.description}</p> <p>{eachReview.rating}/5</p>
+                <div className="column is-two-thirds-desktop">
+                  <p className="author">{eachReview.author.name}</p>{" "}
+                  <p className="description">{eachReview.description}</p> 
                 </div>
-                <div class="column">
-                  <p>{eachReview.created_at && eachReview.created_at}</p>
+                <div className="column is-one-fifth ">
+                <p>{eachReview.rating}/5</p>
                 </div>
                
               </div>

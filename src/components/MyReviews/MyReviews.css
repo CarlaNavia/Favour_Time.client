@@ -7,3 +7,25 @@
   background-size: 100% auto;
 }
 
+.border {
+  margin: 20px;
+  border-bottom: 1px solid rgb(241, 241, 241);
+}
+
+.h1_reviews {
+  color: rgb(232, 110, 108);
+  text-align: center;
+  margin: 15px;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.description {
+  font-style: italic;
+  color: gray;
+  font-size: 12px;
+}
+
+.author {
+  font-weight: bold;
+}
