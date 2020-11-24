@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BookingService from "../../lib/booking-service";
-import "./MyReviews.css"
-import Rating from "../Rating"
+import "./MyReviews.css";
+import Rating from "../Rating";
 
 class MyReviews extends Component {
   state = {
@@ -9,7 +9,6 @@ class MyReviews extends Component {
   };
   componentDidMount() {
     this.getMyReviews();
-
   }
 
   getMyReviews() {
@@ -18,10 +17,7 @@ class MyReviews extends Component {
     );
   }
 
-
-
   render() {
-    console.log(this.state.listOfReviews && this.state.listOfReviews.rating)
     return (
       <div>
         <h1 className="h1_title">MY REVIEWS</h1>
@@ -32,7 +28,6 @@ class MyReviews extends Component {
           this.state.listOfReviews.map((eachReview, index) => {
             return (
               <div key={eachReview._id} className="columns is-mobile border">
-              
                 <div className="column is-one-fifth-desktop">
                   <img
                     src={eachReview.author.imageProfile}
@@ -42,12 +37,13 @@ class MyReviews extends Component {
                 </div>
                 <div className="column is-two-thirds-desktop">
                   <p className="author">{eachReview.author.name}</p>{" "}
-                  <p className="description">{eachReview.description}</p> 
+                  <p className="description">{eachReview.description}</p>
                 </div>
                 <div className="column">
-                <p><Rating rating={eachReview.rating}/></p>
+                
+                    <Rating rating={eachReview.rating} />
+                 
                 </div>
-               
               </div>
             );
           })}

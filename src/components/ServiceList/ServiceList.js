@@ -9,14 +9,14 @@ class ServiceList extends Component {
         {this.props.services.map((eachService, index) => {
           return (
             <div className="columns is-mobile border">
-              <div className="column">
+              <div className="column is-hidden-mobile">
                 <img
                   src={eachService.imageService}
                   alt="service"
                   className="service_img"
                 />
               </div>
-              <div className="column is-one-fifth">
+              <div className="column">
                 <p className="name">{eachService.serviceName}</p>
               </div>
 

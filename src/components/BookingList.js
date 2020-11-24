@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookingService from "../lib/booking-service";
 import { Link } from "react-router-dom";
+import "../pages/Profile/Profile.css"
 
 class BookingList extends Component {
   handleClick(bookingId, status) {
@@ -10,10 +11,10 @@ class BookingList extends Component {
   renderButtons(bookingId) {
     return (
       <div>
-        <button onClick={() => this.handleClick(bookingId, "accepted")}>
+        <button className="buttons" onClick={() => this.handleClick(bookingId, "accepted")}>
           Accept
         </button>
-        <button onClick={() => this.handleClick(bookingId, "declined")}>
+         <button className="buttons" onClick={() => this.handleClick(bookingId, "declined")}>
           Declined
         </button>
       </div>
@@ -28,8 +29,9 @@ class BookingList extends Component {
       <ul>
         {this.props.bookings.map((eachBooking, index) => {
           return (
+            
             <div className="columns is-mobile border">
-              <div className="column">
+              <div className="column is-two-fifths-desktop">
                 <p className="name">{eachBooking.service.serviceName}</p>
                 <p>{eachBooking.date}</p>
                 <p>{eachBooking.time}</p>
@@ -37,7 +39,7 @@ class BookingList extends Component {
               <div className="column">
                 <p>Status: {eachBooking.status}</p>
               </div>
-              <div className="columnis-one-fifth desktop">
+              <div className="column">
                 {this.props.isOwner &&
                   eachBooking.status === "pending" &&
                   this.renderButtons(eachBooking._id)}
