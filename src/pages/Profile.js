@@ -22,6 +22,28 @@ class Profile extends Component {
     const averageReviews = result.rating / totalReviews;
     return averageReviews;
   }
+  rate = () => {
+    const blackStar = Math.round(this.getUserRating());
+    if (blackStar === 0) {
+      return "☆☆☆☆☆";
+    }
+    if (blackStar === 1) {
+      return "★☆☆☆☆";
+    }
+    if (blackStar === 2) {
+      return "★★☆☆☆";
+    }
+    if (blackStar === 3) {
+      return "★★★☆☆";
+    }
+    if (blackStar === 4) {
+      return "★★★★☆";
+    }
+    if (blackStar === 5) {
+      return "★★★★★";
+    }
+    return blackStar;
+  };
 
   getImageProfile() {
     if (this.props.user.imageProfile) {
@@ -32,6 +54,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.rate(), "rating");
     return (
       <div>
         <div class="columns is-mobile">
@@ -39,54 +62,58 @@ class Profile extends Component {
             <h3>{this.props.user.name}</h3>
             <p>{this.props.user.credits} credits</p>
           </div>
-          <div class="column"><img
-          src={this.getImageProfile()}
-          alt="profile"
-          style={{ width: 50, borderRadius: 50 }}
-        />
-        <p>{this.getUserRating()}/5</p></div>
+          <div class="column">
+            <img
+              src={this.getImageProfile()}
+              alt="profile"
+              style={{ width: 50, borderRadius: 50 }}
+            />
+            <p>{this.rate()}</p>
+          </div>
         </div>
         <div class="columns">
           <div class="column">First column</div>
         </div>
         <button onClick={this.props.history.goBack}>Back</button>
+        <button onClick={this.props.history.goBack}>Back</button>
+        <h3>{this.props.user.name}</h3>
+        <p>{this.props.user.credits} credits</p>
 
-        
-        <div class="container"> 
-        <Tabs>
-          <TabList>
-            <Tab>
-              <p>My Bookings</p>
-            </Tab>
-            <Tab>
-              <p>My Requests</p>
-            </Tab>
-            <Tab>
-              <p>My Reviews</p>
-            </Tab>
-            <Tab>
-              <p>My Profile</p>
-            </Tab>
-            <Tab>
-              <p>My Services</p>
-            </Tab>
-          </TabList>
-          <TabPanel>
-            <MyBookings userId={this.props.user._id} />
-          </TabPanel>
-          <TabPanel>
-            <MyRequests userId={this.props.user._id} />
-          </TabPanel>
-          <TabPanel>
-            <MyReviews userId={this.props.user._id} />
-          </TabPanel>
-          <TabPanel>
-            <UserDetails user={this.props.user} />
-          </TabPanel>
-          <TabPanel>
-            <MyServices userId={this.props.user._id} />
-          </TabPanel>
-        </Tabs>
+        <div class="container">
+          <Tabs>
+            <TabList>
+              <Tab>
+                <p>My Bookings</p>
+              </Tab>
+              <Tab>
+                <p>My Requests</p>
+              </Tab>
+              <Tab>
+                <p>My Reviews</p>
+              </Tab>
+              <Tab>
+                <p>My Profile</p>
+              </Tab>
+              <Tab>
+                <p>My Services</p>
+              </Tab>
+            </TabList>
+            <TabPanel>
+              <MyBookings userId={this.props.user._id} />
+            </TabPanel>
+            <TabPanel>
+              <MyRequests userId={this.props.user._id} />
+            </TabPanel>
+            <TabPanel>
+              <MyReviews userId={this.props.user._id} />
+            </TabPanel>
+            <TabPanel>
+              <UserDetails user={this.props.user} />
+            </TabPanel>
+            <TabPanel>
+              <MyServices userId={this.props.user._id} />
+            </TabPanel>
+          </Tabs>
         </div>
       </div>
     );

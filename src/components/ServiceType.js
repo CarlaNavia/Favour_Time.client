@@ -27,10 +27,10 @@ class ServiceType extends Component {
  
    render(){
     return(
-        <div>
+        <div className="wrapper">
             {this.state.serviceType.map((type) => {
                 return (
-                    <div key={type._id}>
+                    <div className="boxCategory" key={type._id}>
                         <Link to={`/servicetype/${type._id}`}>
                         <Icon code={type.iconCode}/>
                             <h3>{type.serviceName}</h3>
