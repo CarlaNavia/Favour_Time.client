@@ -6,7 +6,7 @@ import AuthProvider from "./lib/AuthProvider";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./pages/Private";
-import Profile from "./pages/Profile";
+import Profile from "./pages/Profile/Profile";
 import EditProfile from "./pages/EditProfile";
 import PrivateRoute from "./components/PrivateRoute";
 import ServiceType from './components/ServiceType';
