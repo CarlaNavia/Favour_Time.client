@@ -6,7 +6,7 @@ import MyReviews from "../../components/MyReviews/MyReviews";
 import UserDetails from "../../components/UserDetails";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import MyServices from "../../components/MyServices";
+import MyServices from "../../components/MyServices/MyServices";
 import { Link } from "react-router-dom";
 import "./Profile.css";
 import Rating from "../../components/Rating"

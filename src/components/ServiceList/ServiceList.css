@@ -1,0 +1,37 @@
+.border {
+    margin: 20px;
+    border-bottom: 1px solid rgb(241, 241, 241);
+  }
+
+  .credits {
+    font-style: italic;
+    color: gray;
+    font-size: 12px;
+  }
+  .description {
+    font-style: normal;
+    color: gray;
+    font-size: 12px;
+  }
+  
+  .name {
+    font-weight: bold;
+  }
+  .service_img {
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 25%;
+    background-size: 100% auto;
+  }
+
+  .iconDelete {
+     border:none;
+     background-color: white; 
+    
+  }
+  .icons {
+      height: 20px;
+  }
+  
