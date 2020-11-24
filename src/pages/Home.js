@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import NewService from '../components/NewService';
 import ServiceType from '../components/ServiceType';
 import { withAuth } from "../lib/AuthProvider";
-
+import RandomServices from '../components/RandomServices';
 
 class Home extends Component {
     state = {
@@ -28,6 +28,8 @@ class Home extends Component {
                   : null
                 }
               </div>
+
+              <RandomServices  />
             </>
         );
     }

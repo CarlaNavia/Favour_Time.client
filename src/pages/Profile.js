@@ -22,9 +22,30 @@ class Profile extends Component {
     const averageReviews = result.rating / totalReviews;
     return averageReviews;
   }
+  rate = () => {
+    const blackStar = (Math.round(this.getUserRating()))
+    if(blackStar === 0){
+        return "☆☆☆☆☆"
+    }
+    if(blackStar === 1){
+        return "★☆☆☆☆"
+    }
+    if(blackStar === 2){
+        return "★★☆☆☆"
+    }
+    if(blackStar === 3){
+        return "★★★☆☆"
+    }
+    if(blackStar === 4){
+        return "★★★★☆"
+    }
+    if(blackStar === 5){
+        return "★★★★★"
+    }
+    return blackStar;
+}
 
   getImageProfile() {
-    
     if (this.props.user.imageProfile) {
       return this.props.user.imageProfile;
     } else {
@@ -33,6 +54,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.rate(), 'rating')
     return (
       <div>
         <button onClick={this.props.history.goBack}>Back</button>   
@@ -40,7 +62,7 @@ class Profile extends Component {
         <p>{this.props.user.credits} credits</p>
 
         <img src={this.getImageProfile()} alt="profile" style={{width: 50,  borderRadius: 50}}/>
-        <p>{this.getUserRating()}/5</p>
+        <p>{this.rate()}</p>
 
         <Tabs>
           <TabList>
