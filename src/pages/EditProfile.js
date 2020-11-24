@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import HeaderProfile from "../components/HeaderProfile";
 import { withAuth } from "../lib/AuthProvider";
 import UserService from "../lib/user-service";
 
@@ -39,7 +40,8 @@ class EditProfile extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container header">
+        <HeaderProfile history={this.props.history} user={this.props.user} />
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <label>Date of Birth:</label>
           <input

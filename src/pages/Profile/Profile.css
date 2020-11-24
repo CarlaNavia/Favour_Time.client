@@ -73,6 +73,15 @@ a {
     color: rgb(232, 110, 108);
     padding: 5px;
     margin: 5px;
+    font-size:13px;
+    text-align: center;
+   
+}
+.buttons_profile:hover {
+  cursor: pointer;
+  background-color:rgba(232, 110, 108, 0.60);
+  color:white;
+  font-weight: bold;
 }
 
 .header {

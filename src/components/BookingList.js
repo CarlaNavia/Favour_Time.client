@@ -11,10 +11,10 @@ class BookingList extends Component {
   renderButtons(bookingId) {
     return (
       <div>
-        <button className="buttons" onClick={() => this.handleClick(bookingId, "accepted")}>
+        <button className="buttons_profile " onClick={() => this.handleClick(bookingId, "accepted")}>
           Accept
         </button>
-         <button className="buttons" onClick={() => this.handleClick(bookingId, "declined")}>
+         <button className="buttons_profile " onClick={() => this.handleClick(bookingId, "declined")}>
           Declined
         </button>
       </div>
