@@ -21,7 +21,7 @@ class MyBookings extends Component {
   render() {
     return (
       <div>
-        <h1>My bookings:</h1>
+        <h1 className="h1_title">My bookings:</h1>
         { this.state.listOfBookings.length === 0 && "Unfortunately you have not booked any service yet."}
         { this.state.listOfBookings.length > 0 && <BookingList bookings={this.state.listOfBookings}/>}
 

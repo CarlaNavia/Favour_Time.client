@@ -1,8 +1,55 @@
 .profile_img {
-    height: 100px;
-    width: 100px;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    background-size: 100% auto;
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+}
+
+.border {
+  border-bottom: 1px solid rgb(241, 241, 241);
+}
+
+.h1_title {
+  color: rgb(232, 110, 108);
+  text-align: center;
+  margin: 15px;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.description {
+  font-style: italic;
+  color: gray;
+  font-size: 12px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+}
+
+.myservices_icons {
+  height: 50px;
+}
+.iconDelete {
+  border: none;
+  background-color: white;
+}
+.icons {
+  height: 20px;
+}
+
+.service_img {
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 25%;
+  background-size: 100% auto;
 }

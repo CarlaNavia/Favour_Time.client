@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BookingService from "../../lib/booking-service";
 import ServiceList from "../ServiceList/ServiceList";
-import "./MyServices.css"
 
 class MyServices extends Component {
   state = {
@@ -26,7 +25,7 @@ class MyServices extends Component {
   render() {
     return (
       <div>
-        <h1 className="h1_services">MY SERVICES</h1>
+        <h1 className="h1_title">MY SERVICES</h1>
         {this.state.listOfServices.length === 0 &&
           "Unfortunately you have not any service uploaded yet."}
         {this.state.listOfServices.length > 0 && (

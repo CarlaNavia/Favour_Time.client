@@ -8,19 +8,19 @@ class ServiceList extends Component {
       <ul>
         {this.props.services.map((eachService, index) => {
           return (
-            <div class="columns is-mobile border">
-              <div class="column">
+            <div className="columns is-mobile border">
+              <div className="column">
                 <img
                   src={eachService.imageService}
                   alt="service"
                   className="service_img"
                 />
               </div>
-              <div class="column is-one-fifth">
+              <div className="column is-one-fifth">
                 <p className="name">{eachService.serviceName}</p>
               </div>
 
-              <div class="column is-two-fifths-desktop">
+              <div className="column is-two-fifths-desktop">
                 <p className="description">{eachService.description}</p>
                 <p className="credits">{eachService.credits} credits</p>
               </div>

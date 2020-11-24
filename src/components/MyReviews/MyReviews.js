@@ -24,7 +24,7 @@ class MyReviews extends Component {
     console.log(this.state.listOfReviews && this.state.listOfReviews.rating)
     return (
       <div>
-        <h1 className="h1_reviews">MY REVIEWS</h1>
+        <h1 className="h1_title">MY REVIEWS</h1>
         {this.state.listOfReviews.length === 0 &&
           "Unfortunately you don't have any review yet."}
 
@@ -44,7 +44,7 @@ class MyReviews extends Component {
                   <p className="author">{eachReview.author.name}</p>{" "}
                   <p className="description">{eachReview.description}</p> 
                 </div>
-                <div className="column is-one-fifth ">
+                <div className="column">
                 <p><Rating rating={eachReview.rating}/></p>
                 </div>
                

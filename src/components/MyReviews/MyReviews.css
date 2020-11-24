@@ -1,25 +1,3 @@
-.profile_img {
-  height: 100px;
-  width: 100px;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  border-radius: 50%;
-  background-size: 100% auto;
-}
-
-.border {
-  margin: 20px;
-  border-bottom: 1px solid rgb(241, 241, 241);
-}
-
-.h1_reviews {
-  color: rgb(232, 110, 108);
-  text-align: center;
-  margin: 15px;
-  font-size: 20px;
-  text-decoration: underline;
-}
-
 .description {
   font-style: italic;
   color: gray;

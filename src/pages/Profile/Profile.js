@@ -9,7 +9,7 @@ import "react-tabs/style/react-tabs.css";
 import MyServices from "../../components/MyServices/MyServices";
 import { Link } from "react-router-dom";
 import "./Profile.css";
-import Rating from "../../components/Rating"
+import Rating from "../../components/Rating";
 
 class Profile extends Component {
   getUserRating() {
@@ -25,7 +25,6 @@ class Profile extends Component {
     const averageReviews = result.rating / totalReviews;
     return averageReviews;
   }
-  
 
   getImageProfile() {
     if (this.props.user.imageProfile) {
@@ -38,9 +37,10 @@ class Profile extends Component {
   render() {
     return (
       <div>
-      <button onClick={this.props.history.goBack}>Back</button>
-        <div className="columns is-mobile">
-          <div className="column is-three-quarters">
+        <div
+          className="columns is-mobile">
+          <div className="column is-three-quarters ">
+            <button onClick={this.props.history.goBack}>Back</button>
             <h3>{this.props.user.name}</h3>
             <p>{this.props.user.credits} credits</p>
           </div>
@@ -50,34 +50,51 @@ class Profile extends Component {
               alt="profile"
               className="profile_img"
             />
-            <p><Rating rating={this.getUserRating()}/></p>
+            <p>
+              <Rating rating={this.getUserRating()} />
+            </p>
           </div>
         </div>
         <div className="columns">
           <div className="column ">
-            
-          <Link to={`/profile/edit/${this.props.user._id}`} >
-            Edit Profile
-        </Link>
+            <Link to={`/profile/edit/${this.props.user._id}`}>
+              Edit Profile
+            </Link>
             <Link to={"/auth/logout"}>Logout</Link>
 
             <div className="container">
               <Tabs>
                 <TabList>
                   <Tab>
-                    <p>My Bookings</p>
+                    <img
+                      src="../../../booking.png"
+                      alt="booking"
+                      className="icon"
+                    />
                   </Tab>
                   <Tab>
-                    <p>My Requests</p>
+                    <img
+                      src="../../../request.png"
+                      alt="request"
+                      className="icon"
+                    />
                   </Tab>
                   <Tab>
-                    <p>My Reviews</p>
+                    <img
+                      src="../../../review.png"
+                      alt="review"
+                      className="icon"
+                    />
                   </Tab>
                   {/* <Tab>
                     <p>My Profile</p>
                   </Tab> */}
                   <Tab>
-                    <p>My Services</p>
+                    <img
+                      src="../../../services.png"
+                      alt="service"
+                      className="icon"
+                    />
                   </Tab>
                 </TabList>
                 <TabPanel>

@@ -18,7 +18,7 @@ class MyRequests extends Component {
   render() {
     return (
       <div>
-        <h1>My requests:</h1>
+        <h1 className="h1_title">MY REQUESTS</h1>
         {this.state.listOfRequests.length === 0 &&
           "Unfortunately you have not any request yet."}
         {this.state.listOfRequests.length > 0 && (
