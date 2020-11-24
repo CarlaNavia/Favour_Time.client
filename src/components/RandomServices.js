@@ -40,10 +40,8 @@ class RandomServices extends Component {
                             {random.serviceName}
                         </Link>
                     </div>
-                    
-                 
                 )
-            }).slice(0,6)}
+            }).slice(0,5)}
             </>
         )
     }
