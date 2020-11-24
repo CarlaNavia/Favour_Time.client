@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookingService from "../../lib/booking-service";
 import "./MyReviews.css"
+import Rating from "../Rating"
 
 class MyReviews extends Component {
   state = {
@@ -44,7 +45,7 @@ class MyReviews extends Component {
                   <p className="description">{eachReview.description}</p> 
                 </div>
                 <div className="column is-one-fifth ">
-                <p>{eachReview.rating}/5</p>
+                <p><Rating rating={eachReview.rating}/></p>
                 </div>
                
               </div>

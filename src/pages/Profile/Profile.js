@@ -9,6 +9,7 @@ import "react-tabs/style/react-tabs.css";
 import MyServices from "../../components/MyServices";
 import { Link } from "react-router-dom";
 import "./Profile.css";
+import Rating from "../../components/Rating"
 
 class Profile extends Component {
   getUserRating() {
@@ -24,28 +25,7 @@ class Profile extends Component {
     const averageReviews = result.rating / totalReviews;
     return averageReviews;
   }
-  rate = () => {
-    const blackStar = Math.round(this.getUserRating());
-    if (blackStar === 0) {
-      return "☆☆☆☆☆";
-    }
-    if (blackStar === 1) {
-      return "★☆☆☆☆";
-    }
-    if (blackStar === 2) {
-      return "★★☆☆☆";
-    }
-    if (blackStar === 3) {
-      return "★★★☆☆";
-    }
-    if (blackStar === 4) {
-      return "★★★★☆";
-    }
-    if (blackStar === 5) {
-      return "★★★★★";
-    }
-    return blackStar;
-  };
+  
 
   getImageProfile() {
     if (this.props.user.imageProfile) {
@@ -58,6 +38,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
+      <button onClick={this.props.history.goBack}>Back</button>
         <div className="columns is-mobile">
           <div className="column is-three-quarters">
             <h3>{this.props.user.name}</h3>
@@ -69,14 +50,16 @@ class Profile extends Component {
               alt="profile"
               className="profile_img"
             />
-            <p>{this.rate()}</p>
+            <p><Rating rating={this.getUserRating()}/></p>
           </div>
         </div>
         <div className="columns">
           <div className="column ">
-            <button onClick={this.props.history.goBack}>Back</button>
-            <Link to={"/edit-profile"}>Edit Profile</Link>
-            <Link to={"/logout"}>Logout</Link>
+            
+          <Link to={`/profile/edit/${this.props.user._id}`} >
+            Edit Profile
+        </Link>
+            <Link to={"/auth/logout"}>Logout</Link>
 
             <div className="container">
               <Tabs>

@@ -9,9 +9,9 @@ class UserDetails extends Component {
         <h3>Street name:{this.props.user.address.streetName}</h3>
         <p>{this.props.user.dateOfBirth}</p>
         <p>{this.props.user.name}</p>
-        <Link to={`/profile/edit/${this.props.user._id}`} >
+        {/* <Link to={`/profile/edit/${this.props.user._id}`} >
             Edit
-        </Link>
+        </Link> */}
       </div>
     );
   }
