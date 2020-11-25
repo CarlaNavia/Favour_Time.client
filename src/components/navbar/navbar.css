@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Pacifico&display=swap');
+
+.imgButtonProfile{
+    width: 33px;
+    border-radius: 50px;
+    margin: 0px;
+}
+.imgButton{
+    width: 30px;
+    margin: 0px;
+}
+a.buttonLink{
+    color: rgb(232,110,108);
+}
+.bg-light {
+    background-color: rgb(232,110,108)!important;
+}
+.btn-outline-danger {
+    border: 1px solid rgb(232,110,108);
+    background-color: #fff;
+    border-radius: 4rem;
+}
+.mr-auto, .mx-auto {
+    margin: 0px!important;
+}
+
+.mr-auto, .navbar-collapse{
+    justify-content: flex-end;
+}
+.space{
+    margin: 0px 15px;
+}
+.nameLogo{
+    font-family: 'Caveat', cursive;
+    font-family: 'Pacifico', cursive;
+    color: #fff;
+}
+.logoNavbar:hover, .buttonLink:hover{
+    list-style: none;
+    text-decoration: none;
+}
+.btn-outline-danger:hover{
+    background-color: #fff;
+    text-decoration: none;
+    list-style: none;
+}
+
+.btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active {
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: box-shadow ease-in-out 200ms,transform ease-in-out 200ms;
+    transition-delay: 50ms;
+    background-color: rgba(232, 110, 108, 0.541);
+  }
+a.buttonLink:hover{
+    color: #fff;
+}
+
+@media (max-width: 992px){
+    .navbar-nav{
+        display: flex!important;
+        flex-basis: auto;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbar-expand-lg .navbar-collapse .btn-outline-danger{
+        display: flex!important;
+        flex-basis: auto;
+        justify-content: center;
+        width: 30%;
+    }
+ 
+}

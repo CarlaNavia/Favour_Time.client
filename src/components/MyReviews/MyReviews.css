@@ -1,0 +1,9 @@
+.description {
+  font-style: italic;
+  color: gray;
+  font-size: 12px;
+}
+
+.author {
+  font-weight: bold;
+}
