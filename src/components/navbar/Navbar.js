@@ -5,6 +5,7 @@ import './navbar.css';
 import { Navbar, Nav , Button, Modal } from 'react-bootstrap';
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
+import Faqs from "../../pages/Faqs";
 
 const NavBar = (props) => {
 
@@ -16,10 +17,14 @@ const NavBar = (props) => {
     }
   }
   const { user, logout ,isLoggedin } = props;
-  const [show, setShow] = React.useState(false);
 
+  const [show, setShow ] = React.useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [showFaq, setShowFaq ] = React.useState(false);
+  const handleCloseFaq = () => setShowFaq(false);
+  const handleShowFaq = () => setShowFaq(true);
 
   return(
     <>
@@ -60,20 +65,16 @@ const NavBar = (props) => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
-          
-    
-          <Button variant="outline-danger" className="space" size="lg" onClick={handleShow} >
-            Sign in
-          </Button>
-         
-          <Button variant="outline-danger" size="lg">
-          <Link to='/faqs' className='buttonLink'>
-             <img src='../../../Icons/informacion.png' alt="info" className="imgButton"/> Info
-          </Link>
-          </Button>
+        <Button variant="outline-danger" className="space" size="lg" onClick={handleShow} >
+          Sign in
+        </Button>
+        
+        <Button variant="outline-danger" size="lg" onClick={handleShowFaq}>
+            <img src='../../../Icons/informacion.png' alt="info" className="imgButton"/> Info
+        </Button>
       </Nav>
-      </Navbar.Collapse>
-      </Navbar>
+    </Navbar.Collapse>
+    </Navbar>
     )}
 
     <Modal
@@ -87,6 +88,20 @@ const NavBar = (props) => {
       </Modal.Header>
         <Modal.Body >
           <Login/>
+        </Modal.Body>
+      </Modal>
+
+        <Modal
+        show={showFaq}
+        onHide={handleCloseFaq}
+        backdrop="static"
+        keyboard={false}
+      >
+      <Modal.Header closeButton>
+        <Modal.Title> <h1 className="h1_title">FREQUENT ASKED QUESTIONS</h1> </Modal.Title>
+      </Modal.Header>
+        <Modal.Body >
+          <Faqs/>
         </Modal.Body>
         </Modal>
     </>

@@ -52,6 +52,7 @@ a.buttonLink{
     transition: box-shadow ease-in-out 200ms,transform ease-in-out 200ms;
     transition-delay: 50ms;
     background-color: rgba(232, 110, 108, 0.541);
+    color: #fff;
   }
 a.buttonLink:hover{
     color: #fff;

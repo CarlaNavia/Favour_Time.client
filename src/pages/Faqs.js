@@ -6,10 +6,9 @@ import "./Faq.css";
 class Faqs extends Component {
   render() {
     return (
-      <div>
-        <Navbar />
-        <div className="heading_margin">
-          <h1 className="h1_title">FREQUENT ASKED QUESTIONS</h1>
+     <>
+    
+          
           <Accordion defaultActiveKey="0" className="container">
             <Card>
               <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -79,8 +78,7 @@ class Faqs extends Component {
               </Accordion.Collapse>
             </Card>
           </Accordion>
-        </div>
-      </div>
+</>
     );
   }
 }
