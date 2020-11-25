@@ -22,6 +22,12 @@ class EditProfile extends Component {
     this.setState({ currentUser: copyUser });
   }
 
+  handleNameChange(event) {
+    let copyUser = this.state.currentUser;
+    copyUser.name = event.target.value;
+    this.setState({ currentUser: copyUser });
+  }
+
   handleImageProfile(event) {
     const files = event.target.files[0];
     UserService.uploadPhoto(files).then((data) => {
@@ -55,15 +61,16 @@ class EditProfile extends Component {
             className="form_profile"
             type="text"
             defaultValue={this.state.currentUser.name}
-            onChange={((e) => this.handleInputChange(e), "name")}
-          /> <br />
-
+            onChange={(e) => this.handleNameChange(e)}
+          />
+          <br />
+        
           <label>Lastname:</label>
           <input
             className="form_profile"
             type="text"
-            defaultValue={this.state.currentUser.lastname}
-            onChange={((e) => this.handleInputChange(e), "lastname")}
+            defaultValue={this.state.currentUser.lastName}
+            onChange={(e) => this.handleInputChange(e, "lastName")}
           />
           <br />
           <label>Date of Birth:</label>
@@ -78,8 +85,8 @@ class EditProfile extends Component {
           <input
             className="form_profile"
             type="number"
-            defaultValue={this.state.currentUser.number}
-            onChange={((e) => this.handleInputChange(e), "number")}
+            defaultValue={this.state.currentUser.phoneNumber}
+            onChange={(e) => this.handleInputChange(e, "phoneNumber")}
           />
           <br />
           <label>Image:</label> <br />

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating";
 import NavBar from "../components/navbar/Navbar";
+import "../pages/Profile/Profile.css"
 
 class HeaderProfile extends Component {
   getImageProfile() {
@@ -32,7 +33,7 @@ class HeaderProfile extends Component {
         <NavBar />
         <div className="column is-four-fifths-desktop ">
           <h3>{this.props.user.name}</h3>
-
+          <div className="credits_mobile"><p>{this.props.user.credits} credits</p></div>
           <div className="align_buttons">
             <Link
               className="buttons_profile"

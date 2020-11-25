@@ -34,9 +34,9 @@ class Services extends Component {
         <Navbar />
 
         <div className="container margin_header">
-          <div className="serviceTypeName">
+          <div className="serviceTypeName title iconTitle">
             <Icon code={this.state.servicesType.iconCode} />
-            <h1>{this.state.servicesType.serviceName} </h1>
+            <h1 className="h1_title">{this.state.servicesType.serviceName} </h1>
           </div>
           {this.state.services.length > 0 && (
             <ServiceList showMoreButton services={this.state.services} />

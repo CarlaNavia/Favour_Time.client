@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "../../pages/Profile/Profile.css"
 
 class ServiceListItem extends Component {
   render() {
@@ -36,7 +37,7 @@ class ServiceListItem extends Component {
             </button>
           )}
           {!this.props.isOwner && this.props.showMoreButton && (
-            <Link to={`/services/${this.props.oneService._id}`}>More </Link>
+            <Link to={`/services/${this.props.oneService._id}`} className="buttons_profile">More </Link>
           )}
         </div>
       </div>
