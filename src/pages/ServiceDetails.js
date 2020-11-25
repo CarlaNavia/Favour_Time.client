@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ServiceTypeService from '../lib/serviceType-service';
 import { withAuth } from "../lib/AuthProvider";
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar/Navbar';
 import BookingService from '../lib/booking-service';
 
 class ServiceDetails extends Component {
@@ -11,6 +11,7 @@ class ServiceDetails extends Component {
         date: '',
         time: '',
         extraInformation: '',
+        imageMap: ''
     }
 
     componentDidMount() {
@@ -28,7 +29,17 @@ class ServiceDetails extends Component {
         .then(responseFromApi => {
             this.setState({
                 serviceDetail: responseFromApi,
-                owner: responseFromApi.owner
+                owner: responseFromApi.owner,
+                imageMap: `https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=4lDY5DXh7ZW1sLWz2IwQLWnf2vXf_GibFkqD9gErzu0
+                                &co=Spain
+                                &ci=${responseFromApi.cityToBeHeld}
+                                &s=${responseFromApi.addressToBeHeld}
+                                &n=${responseFromApi.streetNumberToBeHeld}
+                                &z=17
+                                &h=200
+                                &ppi=250
+                                &w=500
+                                &f=1`
             });
         })
         .catch(error => console.log(error));
@@ -70,6 +81,7 @@ class ServiceDetails extends Component {
 
 
     render (){
+        console.log(this.state.serviceDetail, 'this.state.serviceDetail')
         return( 
         <>
         <Navbar/>
@@ -96,17 +108,9 @@ class ServiceDetails extends Component {
                     <input type="submit" value="Submit"/>
             </form>
 
-            <div >
-                <img src={this.state.serviceDetail && `https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=4lDY5DXh7ZW1sLWz2IwQLWnf2vXf_GibFkqD9gErzu0
-                &co=Spain
-                &ci=${this.state.serviceDetail.cityToBeHeld}
-                &s=${this.state.serviceDetail.addressToBeHeld}
-                &n=${this.state.serviceDetail.streetNumberToBeHeld}
-                &z=17
-                &h=200
-                &ppi=250
-                &w=500
-                &f=1`} alt="Location of service"/>
+            <div>
+
+                <img src={this.state.imageMap} alt="Location of service" />
             </div>
         </>
         );

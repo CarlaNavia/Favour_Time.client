@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BookingService from "../lib/booking-service";
+import BookingService from "../../lib/booking-service";
 import { Link } from "react-router-dom";
 import "../pages/Profile/Profile.css"
 

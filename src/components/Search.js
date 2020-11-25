@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ServiceTypeService from '../lib/serviceType-service';
 import { Link } from "react-router-dom";
+import './search.css';
 
 class Search extends Component {
     state = { 
@@ -48,19 +49,22 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper">
+        <div class="search_box">
         <input 
-          type="text" 
+          type="search" 
           name="search" 
-          placeholder="Search" 
+          className="searchInput"
+          placeholder="Search in all categories" 
           value={this.state.search} 
           onChange={(e)=> this.handleChange(e)} 
         />
         <ul>
         {this.state.filteredServiceList ? this.state.filteredServiceList.map((service, index)=> {
           return(
+
               <li key={index}>
-              <Link to={`/servicetype/${service.serviceType && service.serviceType._id}`}>
+              <Link className="liSearch" to={`/servicetype/${service.serviceType && service.serviceType._id}`}>
                 {service.serviceName} <br/>
                 {service.serviceType && service.serviceType.serviceName}
               </Link>
@@ -68,6 +72,7 @@ class Search extends Component {
           )
         }) : "" }
         </ul>
+        </div>
       </div>
     )
   }

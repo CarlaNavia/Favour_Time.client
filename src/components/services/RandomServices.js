@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import ServiceTypeService from '../lib/serviceType-service';
+import ServiceTypeService from '../../lib/serviceType-service';
 import { Link } from "react-router-dom";
-
+import { Card } from 'react-bootstrap';
+import './serviceType.css';
 class RandomServices extends Component {
     state = { 
       randomServices: [],
@@ -35,15 +36,25 @@ class RandomServices extends Component {
             <>
             {this.state.randomServices.map((random)=> {
                 return(
-                    <div key={random._id}>
-                        <Link to={`/services/${random._id}`}>
-                            {random.serviceName}
-                        </Link>
-                    </div>
+    
+                    <Card style={{ width: '18rem' }} key={random._id} className="cardRandom">
+                    <Link to={`/services/${random._id}`}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                    <Card.Title>{random.serviceName}</Card.Title>
+                    <Card.Text>
+                        {random.description}<br/>
+                        {random.credits}
+                    </Card.Text>
+                    </Card.Body>
+                    </Link>
+                    </Card>
+     
                 )
-            }).slice(0,5)}
+            }).slice(0,4)}
             </>
         )
     }
 }
 export default RandomServices
+

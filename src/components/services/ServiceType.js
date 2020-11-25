@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { withAuth } from "../lib/AuthProvider";
-import ServiceTypeService from '../lib/serviceType-service';
+import { withAuth } from "../../lib/AuthProvider";
+import ServiceTypeService from '../../lib/serviceType-service';
 import { Link } from "react-router-dom";
 import Icon from "./Icon"
+import './serviceType.css';
 
 class ServiceType extends Component {
     
@@ -32,8 +33,10 @@ class ServiceType extends Component {
                 return (
                     <div className="boxCategory" key={type._id}>
                         <Link to={`/servicetype/${type._id}`}>
-                        <Icon code={type.iconCode}/>
-                            <h3>{type.serviceName}</h3>
+                        <Icon code={type.iconCode} />
+                        </Link>
+                        <Link className='nameCategory' to={`/servicetype/${type._id}`}>
+                            <h6 className='h6Type'>{type.serviceName}</h6>
                         </Link>
                     </div>
                 )
