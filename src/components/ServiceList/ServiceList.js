@@ -8,7 +8,7 @@ class ServiceList extends Component {
       <ul>
         {this.props.services.map((eachService, index) => {
           return (
-            <div className="columns is-mobile border">
+            <div className="columns is-mobile border" key={eachService._id}>
               <div className="column is-hidden-mobile">
                 <img
                   src={eachService.imageService}
@@ -25,16 +25,27 @@ class ServiceList extends Component {
                 <p className="credits">{eachService.credits} credits</p>
               </div>
               <div className="column is-one-fifth desktop">
-                <Link to={`/service/edit/${eachService._id}`}>
-                  <img className="icons" src="../../../edit.png" alt="edit" />
-                </Link>
-                <br/>
-                <button
-                  className="iconDelete"
-                  onClick={() => this.props.onDelete(eachService._id)}
-                >
-                  <img className="icons" src="../../../delete.png" alt="delete" />
-                </button>
+                {this.props.isOwner && (
+                  <Link to={`/service/edit/${eachService._id}`}>
+                    <img className="icons" src="../../../edit.png" alt="edit" />
+                  </Link>
+                )}
+                <br />
+                {this.props.isOwner && (
+                  <button
+                    className="iconDelete"
+                    onClick={() => this.props.onDelete(eachService._id)}
+                  >
+                    <img
+                      className="icons"
+                      src="../../../delete.png"
+                      alt="delete"
+                    />
+                  </button>
+                )}
+                {!this.props.isOwner && (
+                  <Link to={`/services/${eachService._id}`}>More </Link>
+                )}
               </div>
             </div>
           );

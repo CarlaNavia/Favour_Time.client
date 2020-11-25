@@ -6,20 +6,13 @@ import MyReviews from "../../components/MyReviews/MyReviews";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import "react-tabs/style/react-tabs.css";
-import MyServices from "../../components/MyServices/MyServices";
+import MyServices from "../../components/services/MyServices";
 import "./Profile.css";
 import HeaderProfile from "../../components/HeaderProfile";
 
-
 function Profile(props) {
-
-
-    return (
-      <>
-
-    
-      
-       
+  return (
+    <>
       <div className="container header">
         <HeaderProfile history={props.history} user={props.user} />
 
@@ -68,9 +61,8 @@ function Profile(props) {
           </Tabs>
         </div>
       </div>
-      </>
-    );
-  }
-
+    </>
+  );
+}
 
 export default withAuth(Profile);

@@ -4,17 +4,15 @@ import { Link } from "react-router-dom";
 import "../../pages/Profile/Profile.css"
 
 class BookingList extends Component {
-  handleClick(bookingId, status) {
-    BookingService.changeTheBookingStatus(bookingId, status);
-  }
+  
 
   renderButtons(bookingId) {
     return (
       <div>
-        <button className="buttons_profile " onClick={() => this.handleClick(bookingId, "accepted")}>
+        <button className="buttons_profile " onClick={() => this.props.onAccept(bookingId, "accepted")}>
           Accept
         </button>
-         <button className="buttons_profile " onClick={() => this.handleClick(bookingId, "declined")}>
+         <button className="buttons_profile " onClick={() => this.props.onDelete(bookingId, "declined")}>
           Declined
         </button>
       </div>
@@ -22,15 +20,16 @@ class BookingList extends Component {
   }
 
   renderReviewButton(bookingId) {
-    return <Link to={`/add-a-review/${bookingId}`}>Add a review</Link>;
+    return <Link to={`/add-a-review/${bookingId}`} className="buttons_profile">Add a review</Link>;
   }
   render() {
+    console.log(this.props.isOwner, "booking owner")
     return (
       <ul>
         {this.props.bookings.map((eachBooking, index) => {
           return (
             
-            <div className="columns is-mobile border">
+            <div key={eachBooking._id} className="columns is-mobile border">
               <div className="column is-two-fifths-desktop">
                 <p className="name">{eachBooking.service.serviceName}</p>
                 <p>{eachBooking.date}</p>

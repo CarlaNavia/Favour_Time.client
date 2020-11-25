@@ -1,0 +1,12 @@
+.margin_header{
+    margin-top:150px;
+}
+
+.serviceTypeName{
+    display:flex;
+    align-items:center;
+
+}
+.serviceTypeName>div>img {
+    width: 200px;
+}

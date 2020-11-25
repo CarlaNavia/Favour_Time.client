@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import HeaderProfile from "../components/HeaderProfile";
 import BookingService from "../lib/booking-service";
+import { withAuth } from "../lib/AuthProvider";
+
 
 class AddReview extends Component {
   state = {
@@ -46,7 +49,9 @@ class AddReview extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="container header">
+       <HeaderProfile history={this.props.history} user={this.props.user} />
+
         {this.state.hasInformation && this.renderBookingInfo()}
 
         <form onSubmit={(e) => this.handleSubmit(e)}>
@@ -71,4 +76,4 @@ class AddReview extends Component {
   }
 }
 
-export default AddReview;
+export default withAuth(AddReview);
