@@ -58,7 +58,10 @@ const NavBar = (props) => {
           <Button variant="outline-danger" size="lg" onClick={handleShowFaq}>
             <img src='../../../Icons/informacion.png' alt="info" className="imgButton"/> Info
           </Button>
-          <Link to='/#' className="navbar-item" onClick={logout} >Logout</Link>
+          <Button variant="outline-danger" className="space" size="lg">
+            <Link to='/#' className="buttonLink" onClick={logout} >Logout</Link>
+          </Button>
+         
       </Nav>
     </Navbar.Collapse>
     </Navbar>

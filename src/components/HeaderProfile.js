@@ -36,10 +36,7 @@ class HeaderProfile extends Component {
               <Link className="buttons_profile" to={`/profile/edit/${this.props.user._id}`}>
                 Edit Profile
               </Link>
-           
-            <button className="buttons_profile">
-              Log out
-            </button>
+        
           </div>
         </div>
         <div className="column position_img">
