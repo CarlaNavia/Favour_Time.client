@@ -28,6 +28,7 @@ class HeaderProfile extends Component {
     console.log(this.props, "props");
     return (
       <div className="columns is-mobile heading_position">
+       <NavBar/>
         <div className="column is-four-fifths-desktop ">
           <h3>{this.props.user.name}</h3>
           <p>{this.props.user.credits} credits</p>
