@@ -20,10 +20,9 @@ class BookingList extends Component {
   }
 
   renderReviewButton(bookingId) {
-    return <Link to={`/add-a-review/${bookingId}`} className="buttons_profile">Add a review</Link>;
+    return <Link to={`/add-a-review/${bookingId}`} className="buttons_profile">Review</Link>;
   }
   render() {
-    console.log(this.props.isOwner, "booking owner")
     return (
       <ul>
         {this.props.bookings.map((eachBooking, index) => {

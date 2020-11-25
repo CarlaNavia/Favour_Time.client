@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import HeaderProfile from "../components/HeaderProfile";
 import { withAuth } from "../lib/AuthProvider";
 import UserService from "../lib/user-service";
+import "../pages/Profile/Profile.css";
 
 class EditProfile extends Component {
   state = {
@@ -27,6 +28,11 @@ class EditProfile extends Component {
       this.setState({ currentUser: data });
     });
   }
+  handleInputChange(event, propertyName) {
+    let copyUser = this.state.currentUser;
+    copyUser[propertyName] = event.target.value;
+    this.setState({ currentUser: copyUser });
+  }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -42,20 +48,49 @@ class EditProfile extends Component {
     return (
       <div className="container header">
         <HeaderProfile history={this.props.history} user={this.props.user} />
-        <form onSubmit={(e) => this.handleSubmit(e)}>
+        <h1 className="h1_title ">EDIT MY PROFILE</h1>
+        <form className="align_form" onSubmit={(e) => this.handleSubmit(e)}>
+          <label>Name:</label>
+          <input
+            className="form_profile"
+            type="text"
+            defaultValue={this.state.currentUser.name}
+            onChange={((e) => this.handleInputChange(e), "name")}
+          /> <br />
+
+          <label>Lastname:</label>
+          <input
+            className="form_profile"
+            type="text"
+            defaultValue={this.state.currentUser.lastname}
+            onChange={((e) => this.handleInputChange(e), "lastname")}
+          />
+          <br />
           <label>Date of Birth:</label>
           <input
+            className="form_profile"
             type="date"
             defaultValue={this.state.currentUser.dateOfBirth}
             onChange={(e) => this.handleDateOfBirthChange(e)}
           />
-          <label>Image:</label>
+          <br />
+          <label>Phone number:</label>
           <input
+            className="form_profile"
+            type="number"
+            defaultValue={this.state.currentUser.number}
+            onChange={((e) => this.handleInputChange(e), "number")}
+          />
+          <br />
+          <label>Image:</label> <br />
+          <input
+            className="form_profile"
             type="file"
             defaultValue={this.state.currentUser.imageProfile}
             onChange={(e) => this.handleImageProfile(e)}
           />
-          <button>Save</button>
+          <br />
+          <button className="buttons_profile">Save</button>
         </form>
       </div>
     );
