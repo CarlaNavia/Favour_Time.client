@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BookingService from "../../lib/booking-service";
 import { Link } from "react-router-dom";
-import "../pages/Profile/Profile.css"
+import "../../pages/Profile/Profile.css"
 
 class BookingList extends Component {
   handleClick(bookingId, status) {

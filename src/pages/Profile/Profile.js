@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withAuth } from "../../lib/AuthProvider";
-import MyBookings from "../../components/MyBookings";
-import MyRequests from "../../components/MyRequests";
+import MyBookings from "../../components/bookings/MyBookings";
+import MyRequests from "../../components/bookings/MyRequests";
 import MyReviews from "../../components/MyReviews/MyReviews";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
