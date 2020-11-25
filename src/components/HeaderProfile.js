@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating";
+import NavBar from '../components/navbar/Navbar';
 
 class HeaderProfile extends Component {
   getImageProfile() {

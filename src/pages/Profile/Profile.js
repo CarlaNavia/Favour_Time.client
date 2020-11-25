@@ -9,7 +9,7 @@ import "react-tabs/style/react-tabs.css";
 import MyServices from "../../components/MyServices/MyServices";
 import "./Profile.css";
 import HeaderProfile from "../../components/HeaderProfile";
-import NavBar from '../../components/navbar/Navbar';
+
 
 function Profile(props) {
 
@@ -17,7 +17,7 @@ function Profile(props) {
     return (
       <>
 
-     
+    
       
        
       <div className="container header">
