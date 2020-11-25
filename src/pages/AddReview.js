@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import HeaderProfile from "../components/HeaderProfile";
 import BookingService from "../lib/booking-service";
+import { withAuth } from "../lib/AuthProvider";
+import ServiceListItem from "../components/ServiceList/ServiceListItem";
+import "../pages/Profile/Profile.css";
 
 class AddReview extends Component {
   state = {
@@ -15,7 +19,7 @@ class AddReview extends Component {
   getTheBookingReviewed() {
     const { params } = this.props.match;
     BookingService.getOneBooking(params.bookingId).then((data) => {
-      this.setState({ booking: data, hasInformation:true })
+      this.setState({ booking: data, hasInformation: true });
     });
   }
 
@@ -46,29 +50,35 @@ class AddReview extends Component {
   }
   render() {
     return (
-      <div>
-        {this.state.hasInformation && this.renderBookingInfo()}
-
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <label>Description:</label>
-          <input
+      <div className="container header">
+        <HeaderProfile history={this.props.history} user={this.props.user} />
+        <h1 className="h1_title ">SERVICE TO BE REVIEWED:</h1>
+        {this.state.hasInformation && (
+          <ServiceListItem oneService={this.state.booking.service} />
+        )}
+        <h1 className="h1_title ">ADD YOUR REVIEW:</h1>
+        <form className="align_form" onSubmit={(e) => this.handleSubmit(e)}>
+          <label className="label_margin ">Description:</label>
+          <input className="form_profile"
+            required
             type="text"
             defaultValue={this.state.review.description}
             onChange={(e) => this.handleInputChange(e, "description")}
-          />
-          <label>Rating:</label>
-          <input
+          /><br/>
+          <label className="label_margin ">Rating:</label>
+          <input className="form_profile"
+            required
             type="number"
             min="1"
             max="5"
             defaultValue={this.state.review.rating}
             onChange={(e) => this.handleInputChange(e, "rating")}
-          />
-          <button>Save</button>
+          /><br/>
+          <button className="buttons_profile">Save</button>
         </form>
       </div>
     );
   }
 }
 
-export default AddReview;
+export default withAuth(AddReview);

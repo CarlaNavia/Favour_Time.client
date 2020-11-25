@@ -9,10 +9,16 @@ class MyRequests extends Component {
   componentDidMount() {
     this.getMyRequests();
   }
+  handleClick = (bookingId, status)  =>{
+    BookingService.changeTheBookingStatus(bookingId, status).then(() =>
+      this.getMyRequests()
+    );
+  }
 
   getMyRequests() {
-    BookingService.getRequestsByUserID(this.props.userId)
-    .then((requests) => this.setState({ listOfRequests: requests }));
+    BookingService.getRequestsByUserID(this.props.userId).then((requests) =>
+      this.setState({ listOfRequests: requests })
+    );
   }
 
   render() {
@@ -22,7 +28,12 @@ class MyRequests extends Component {
         {this.state.listOfRequests.length === 0 &&
           "Unfortunately you have not any request yet."}
         {this.state.listOfRequests.length > 0 && (
-          <BookingList isOwner bookings={this.state.listOfRequests} />
+          <BookingList
+            isOwner
+            onAccept={this.handleClick}
+            onDelete={this.handleClick}
+            bookings={this.state.listOfRequests}
+          />
         )}
       </div>
     );

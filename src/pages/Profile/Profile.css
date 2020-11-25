@@ -1,11 +1,11 @@
 a {
-    text-decoration: none;
-    color: rgb(232, 110, 108);
+  text-decoration: none;
+  color: rgb(232, 110, 108);
 }
-.position_img{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.position_img {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .profile_img {
   height: 100px;
@@ -14,7 +14,6 @@ a {
   background-position: 50%;
   border-radius: 50%;
   background-size: 100% auto;
-
 }
 
 .border {
@@ -27,8 +26,8 @@ a {
   margin: 15px;
   font-size: 20px;
   text-decoration: underline;
-  margin-bottom:50px;
-  margin-top:30px
+  margin-bottom: 50px;
+  margin-top: 30px;
 }
 
 .description {
@@ -67,38 +66,50 @@ a {
 }
 
 .buttons_profile {
-    border-radius: 2rem;
-    border: 2px solid rgb(232, 110, 108);
-    background-color: white;
-    color: rgb(232, 110, 108);
-    padding: 5px;
-    margin: 5px;
-    font-size:13px;
-    text-align: center;
-   
+  border-radius: 2rem;
+  border: 2px solid rgb(232, 110, 108);
+  background-color: white;
+  color: rgb(232, 110, 108);
+  padding: 5px;
+  margin: 5px;
+  font-size: 13px;
+  text-align: center;
 }
 .buttons_profile:hover {
   cursor: pointer;
-  background-color:rgba(232, 110, 108, 0.60);
-  color:white;
+  background-color: rgba(232, 110, 108, 0.6);
+  color: white;
   font-weight: bold;
 }
 
 .header {
-    padding-top: 50px;
-
+  padding-top: 100px;
 }
 
 @media only screen and (max-width: 600px) {
-    .header {
-        margin: 20px;
-    
-    }
+  .header {
+    margin: 20px;
   }
-
-
-.align_buttons {
-    display: flex;
 }
 
+.align_buttons {
+  display: flex;
+}
 
+.form_profile {
+  border-radius: 2rem;
+  border: 1px solid rgb(198, 182, 157);
+}
+
+.align_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .credits_mobile {
+    display: none;
+  }
+}

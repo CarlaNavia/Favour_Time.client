@@ -2,14 +2,17 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import BookingService from "../lib/booking-service";
 import ServiceTypeService from "../lib/serviceType-service";
-
+import HeaderProfile from "../components/HeaderProfile";
+import "./Profile/Profile.css";
 
 class EditService extends Component {
   state = {
     currentService: {},
+    serviceTypeSelect: [],
   };
   componentDidMount() {
     this.getTheService();
+    this.allServicesSelect();
   }
 
   getTheService() {
@@ -39,60 +42,97 @@ class EditService extends Component {
       this.props.history.push("/profile");
     });
   }
+  allServicesSelect = () => {
+    ServiceTypeService.getAllServiceType()
+      .then((responseFromApi) => {
+        this.setState({
+          serviceTypeSelect: responseFromApi,
+        });
+      })
+      .catch((error) => console.log(error));
+  };
 
   render() {
+    console.log(this.state.currentService, "map")
     return (
-      <div>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
+      <div className="container header">
+        <HeaderProfile history={this.props.history} user={this.props.user} />
+        <h1 className="h1_title ">EDIT MY SERVICE</h1>
+        <form className="align_form" onSubmit={(e) => this.handleSubmit(e)}>
           <label>Service Name:</label>
           <input
+            className="form_profile"
             type="text"
             defaultValue={this.state.currentService.serviceName}
             onChange={(e) => this.handleInputChange(e, "serviceName")}
           />
+          <br />
+          <label for="serviceTypeID">Service Type:</label>
+          <select
+          className="form_profile"
+            name="serviceTypeID"
+            value={this.state.currentService.serviceTypeID}
+            onChange={(e) => this.handleInputChange(e)}
+            required
+          >
+            <option value=""></option>
+            {this.state.serviceTypeSelect.map((type) => {
+              return (
+                <option key={type._id} value={type._id}>
+                  {type.serviceName}
+                </option>
+              );
+            })}
+          </select>
+          <br />
           <label>Description:</label>
           <input
+            className="form_profile"
             type="text"
             defaultValue={this.state.currentService.description}
             onChange={(e) => this.handleInputChange(e, "description")}
           />
-            <label>Image:</label>
+          <br />
+          <label>Image:</label>
           <input
+            className="form_profile"
             type="file"
             defaultValue={this.state.currentService.imageService}
             onChange={(e) => this.handleImageService(e)}
           />
+          <br />
           <label>Available Time:</label>
           <input
+            className="form_profile"
             type="text"
             defaultValue={this.state.currentService.availableTime}
             onChange={(e) => this.handleInputChange(e, "availableTime")}
           />
+          <br />
           <label>City:</label>
           <input
+            className="form_profile"
             type="text"
             defaultValue={this.state.currentService.cityToBeHeld}
             onChange={(e) => this.handleInputChange(e, "cityToBeHeld")}
           />
+          <br />
           <label>Address:</label>
           <input
+            className="form_profile"
             type="text"
             defaultValue={this.state.currentService.addressToBeHeld}
             onChange={(e) => this.handleInputChange(e, "addressToBeHeld")}
           />
-          <label>Street:</label>
-          <input
-            type="text"
-            defaultValue={this.state.currentService.streetNumberToBeHeld}
-            onChange={(e) => this.handleInputChange(e, "streetNumberToBeHeld")}
-          />
+          <br />
           <label>Credits:</label>
           <input
+            className="form_profile"
             type="text"
             defaultValue={this.state.currentService.credits}
             onChange={(e) => this.handleInputChange(e, "credits")}
           />
-          <button>Save</button>
+          <button className="buttons_profile">Save</button>  <br />
         </form>
       </div>
     );

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import ServiceTypeService from "../../lib/serviceType-service";
 import { withAuth } from "../../lib/AuthProvider";
-import './newService.css'
-
+import "./newService.css";
+import { Button } from "react-bootstrap";
 
 class NewService extends Component {
   state = {
@@ -73,98 +73,131 @@ class NewService extends Component {
   render() {
     return (
       <>
-      <div className="newContainer">
-        <form onSubmit={this.handleFormSubmit}>
+        <div className="newContainer">
+          <form onSubmit={this.handleFormSubmit}>
+            <label>Service Name:</label>
 
-          <input
-            type="text"
-            name="serviceName"
-            value={this.state.serviceName}
-            onChange={(e) => this.handleChange(e)}
-            required
-            className="input-Form"
-            placeholder="Service Name"
-          />
+            <input
+              type="text"
+              name="serviceName"
+              value={this.state.serviceName}
+              onChange={(e) => this.handleChange(e)}
+              required
+              className="inputForm"
+            />
 
-          <input
-            type="text"
-            name="cityToBeHeld"
-            value={this.state.cityToBeHeld}
-            onChange={(e) => this.handleChange(e)}
-            required
-            className="input-Form"
-            placeholder="City"
-          />
-
-          <input
-            type="text"
-            name="addressToBeHeld"
-            value={this.state.addressToBeHeld}
-            onChange={(e) => this.handleChange(e)}
-            required
-            className="input-Form"
-            placeholder="Address"
-          />
-          
-          <input
-            type="text"
-            name="streetNumberToBeHeld"
-            value={this.state.streetNumberToBeHeld}
-            onChange={(e) => this.handleChange(e)}
-            required
-            className="input-Form"
-            placeholder="Street Number"
-          />
-         
-          <input
-            type="number"
-            name="credits"
-            value={this.state.credits}
-            onChange={(e) => this.handleChange(e)}
-            required
-            className="input-Form" 
-            placeholder="Credits"
-          />
-
-          <div className="select">
-          <select name="serviceTypeID" value={this.state.serviceTypeID} onChange={(e) => this.handleChange(e)} required>
-            <option value="">Category</option>
-            {this.state.serviceTypeSelect.map((type) => {
-              return (
-                <option key={type._id} value={type._id}>
-                  {type.serviceName}
-                </option>
-              );
-            })}
-          </select>
-          </div>
-  
+            <label for="serviceTypeID">Category:</label>
+            <br />
             <div className="select">
-            <select name="availableTime" value={this.state.availableTime} onChange={(e) => this.handleChange(e)} required>
-              <option value="">Available Time</option>
-              <option value="morning">Morning</option>
-              <option value="afternoon">Afternoon</option>
-              <option value="night">Night</option>
-            </select>
-          </div>
+              <select
+                name="serviceTypeID"
+                value={this.state.serviceTypeID}
+                onChange={(e) => this.handleChange(e)}
+                required
+              >
+                <option value=""></option>
+                {this.state.serviceTypeSelect.map((type) => {
+                  return (
+                    <option key={type._id} value={type._id}>
+                      {type.serviceName}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
 
-          <textarea
-            type="text"
-            name="description"
-            value={this.state.description}
-            onChange={(e) => this.handleChange(e)}
-            required
-            className="input-Form"
-            placeholder="Description"
-          />
+            <br />
 
-          <label for="file-upload" className="upload">
-           Upload your photo
-          </label>
-          <input type="file" id="file-upload" onChange={(e) => this.handleFileUpload(e)} style={{ display: 'none'}} required/>
-          
-          <input type="submit" value="NEW SERVICE" className="signin-btn" />
-        </form>
+            <label>Description:</label>
+            <br />
+            <textarea
+              type="text"
+              name="description"
+              value={this.state.description}
+              onChange={(e) => this.handleChange(e)}
+              required
+              className="inputForm"
+            />
+            <br />
+
+            <label>City:</label>
+            <br />
+            <input
+              type="text"
+              name="cityToBeHeld"
+              value={this.state.cityToBeHeld}
+              onChange={(e) => this.handleChange(e)}
+              required
+              className="inputForm"
+            />
+            <br />
+
+            <label>Address:</label>
+            <br />
+            <input
+              type="text"
+              name="addressToBeHeld"
+              value={this.state.addressToBeHeld}
+              onChange={(e) => this.handleChange(e)}
+              required
+              className="inputForm"
+            />
+            <br />
+
+            <label>Street Number:</label>
+            <br />
+            <input
+              type="text"
+              name="streetNumberToBeHeld"
+              value={this.state.streetNumberToBeHeld}
+              onChange={(e) => this.handleChange(e)}
+              required
+              className="inputForm"
+            />
+            <br />
+
+            <label for="availableTime">Available Time:</label>
+            <br />
+            <div className="select">
+              <select
+                name="availableTime"
+                value={this.state.availableTime}
+                onChange={(e) => this.handleChange(e)}
+                required
+              >
+                <option value=""></option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="night">Night</option>
+              </select>
+            </div>
+
+            <br />
+
+            <label>Image:</label>
+            <br />
+            <input
+              type="file"
+              onChange={(e) => this.handleFileUpload(e)}
+              className="upload"
+            />
+            <br />
+
+            <label>Credits:</label>
+            <br />
+            <input
+              type="number"
+              name="credits"
+              value={this.state.credits}
+              onChange={(e) => this.handleChange(e)}
+              required
+              className="inputForm"
+            />
+            <br />
+            <Button variant="link" size="lg">
+              <input type="submit" value="Submit" className="inputSubmit" />
+            </Button>
+          </form>
         </div>
       </>
     );

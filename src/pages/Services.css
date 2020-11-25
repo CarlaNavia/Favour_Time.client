@@ -1,0 +1,46 @@
+.margin_header {
+  margin-top: 150px;
+}
+
+.serviceTypeName {
+  display: flex;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+.serviceTypeName > div > img {
+  width: 200px;
+}
+.h1_title {
+  color: rgb(232, 110, 108);
+  text-align: center;
+  margin: 15px;
+  font-size: 20px;
+  text-decoration: underline;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+.iconTitle > div > img {
+  width: 100px;
+  background-color: rgb(232, 110, 108);
+  border-radius: 1rem;
+  padding: 10px;
+}
+
+.iconTitle {
+  display: flex;
+  justify-content: center;
+}
+.header {
+  padding-top: 100px;
+}
+.h1_title {
+  color: rgb(232, 110, 108);
+  text-align: center;
+  margin: 15px;
+  font-size: 20px;
+  text-decoration: underline;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}

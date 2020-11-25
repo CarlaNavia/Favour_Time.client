@@ -30,8 +30,10 @@ class MyServices extends Component {
           "Unfortunately you have not any service uploaded yet."}
         {this.state.listOfServices.length > 0 && (
           <ServiceList
+            isOwner={true}
             services={this.state.listOfServices}
             onDelete={this.deleteService}
+            showMoreButton
           />
         )}
       </div>
