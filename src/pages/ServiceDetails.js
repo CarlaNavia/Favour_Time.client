@@ -40,7 +40,6 @@ class ServiceDetails extends Component {
                                 &h=200
                                 &ppi=250
                                 &w=500
-<<<<<<< HEAD
                                 &f=1`
             });
         })
@@ -110,26 +109,6 @@ class ServiceDetails extends Component {
             </form>
 
             <div>
-=======
-                                &f=1`,
-        });
-      })
-      .catch((error) => console.log(error));
-  };
-
-  handleFormSubmit = async (e) => {
-    e.preventDefault();
-    const { params } = this.props.match;
-    const date = new Date(this.state.date).toDateString();
-    const time = this.state.time;
-    const extraInformation = this.state.extraInformation;
-
-    let today = new Date();
-    let selected = new Date(date);
-    if (selected < today) {
-      console.log("You cannot select dates in the past");
-    }
->>>>>>> 595a45954af3bb81abc292281c14eafc0cd98980
 
     try {
       await BookingService.newBooking(params.serviceID, {
