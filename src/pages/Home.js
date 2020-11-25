@@ -10,7 +10,6 @@ import Search from "../components/Search";
 
 function Home() {
   const [show, setShow] = React.useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
