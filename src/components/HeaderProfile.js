@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Rating from "../components/Rating"
+import Rating from "../components/Rating";
 
 class HeaderProfile extends Component {
   getImageProfile() {
@@ -25,20 +25,19 @@ class HeaderProfile extends Component {
   }
 
   render() {
+    console.log(this.props, "props");
     return (
       <div className="columns is-mobile heading_position">
         <div className="column is-four-fifths-desktop ">
           <h3>{this.props.user.name}</h3>
           <p>{this.props.user.credits} credits</p>
           <div className="align_buttons">
-           
-              <Link className="buttons_profile" to={`/profile/edit/${this.props.user._id}`}>
-                Edit Profile
-              </Link>
-           
-            <button className="buttons_profile">
-              Log out
-            </button>
+            <Link
+              className="buttons_profile"
+              to={`/profile/edit/${this.props.user._id}`}
+            >
+              Edit Profile
+            </Link>
           </div>
         </div>
         <div className="column position_img">
