@@ -21,6 +21,7 @@
 .btnService{
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .btn-link{
@@ -43,3 +44,15 @@
     color: #fff;
   }
   
+.randomContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.secondSection{
+    background-color: rgb(241, 241, 241);
+    padding: 100px;
+}

@@ -29,8 +29,9 @@ function Home() {
             <ServiceType />
           </div>
         </div>
+
         <div className="btnService">
-        <Button variant="link" onClick={handleShow}>New Service</Button>
+        <Button variant="link" onClick={handleShow} size="lg">New Service</Button>
         </div>
 
       <Modal
@@ -40,7 +41,7 @@ function Home() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>New Service</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <NewService/>
@@ -49,12 +50,19 @@ function Home() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
         </Modal.Footer>
       </Modal>
+    <div className="secondSection">
 
-     
-        <RandomServices />
+      <div className="randomContainer">
+          <RandomServices />
+      </div>
+      <div className="randomContainer">
+          <RandomServices />
+      </div>
+  
+
+    </div>
         </div>
     );
   }

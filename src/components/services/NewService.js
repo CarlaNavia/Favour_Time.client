@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ServiceTypeService from "../../lib/serviceType-service";
 import { withAuth } from "../../lib/AuthProvider";
-
+import './newService.css'
+import { Button } from 'react-bootstrap';
 
 class NewService extends Component {
   state = {
@@ -81,18 +82,14 @@ class NewService extends Component {
             value={this.state.serviceName}
             onChange={(e) => this.handleChange(e)}
             required
+            className="inputForm"
           />
           <br />
 
-          <label>Category:</label>
+          <label for="serviceTypeID">Category:</label>
           <br />
-          {/* <input type="text" name="serviceType" value={this.state.serviceType} onChange={(e) => this.handleChange(e)}/><br/> */}
-          <select
-            name="serviceTypeID"
-            value={this.state.serviceTypeID}
-            onChange={(e) => this.handleChange(e)}
-            required
-          >
+          <div class="select">
+          <select name="serviceTypeID" value={this.state.serviceTypeID} onChange={(e) => this.handleChange(e)} required>
             <option value=""></option>
             {this.state.serviceTypeSelect.map((type) => {
               return (
@@ -102,6 +99,8 @@ class NewService extends Component {
               );
             })}
           </select>
+          </div>
+
           <br />
 
           <label>Description:</label>
@@ -112,6 +111,7 @@ class NewService extends Component {
             value={this.state.description}
             onChange={(e) => this.handleChange(e)}
             required
+            className="inputForm"
           />
           <br />
 
@@ -123,6 +123,7 @@ class NewService extends Component {
             value={this.state.cityToBeHeld}
             onChange={(e) => this.handleChange(e)}
             required
+            className="inputForm"
           />
           <br />
 
@@ -134,6 +135,7 @@ class NewService extends Component {
             value={this.state.addressToBeHeld}
             onChange={(e) => this.handleChange(e)}
             required
+            className="inputForm"
           />
           <br />
 
@@ -145,27 +147,26 @@ class NewService extends Component {
             value={this.state.streetNumberToBeHeld}
             onChange={(e) => this.handleChange(e)}
             required
+            className="inputForm"
           />
           <br />
 
-          <label>Available Time:</label>
+          <label for="availableTime">Available Time:</label>
           <br />
-          <select
-            name="availableTime"
-            value={this.state.availableTime}
-            onChange={(e) => this.handleChange(e)}
-            required
-          >
+          <div class="select">
+          <select name="availableTime" value={this.state.availableTime} onChange={(e) => this.handleChange(e)} required>
             <option value=""></option>
             <option value="morning">Morning</option>
             <option value="afternoon">Afternoon</option>
             <option value="night">Night</option>
           </select>
+          </div>
+          
           <br />
 
           <label>Image:</label>
           <br />
-          <input type="file" onChange={(e) => this.handleFileUpload(e)} />
+          <input type="file" onChange={(e) => this.handleFileUpload(e)} className="upload" />
           <br />
 
           <label>Credits:</label>
@@ -176,10 +177,12 @@ class NewService extends Component {
             value={this.state.credits}
             onChange={(e) => this.handleChange(e)}
             required
+            className="inputForm"
           />
           <br />
-
-          <input type="submit" value="Submit" />
+          <Button variant="link" size="lg">
+            <input type="submit" value="Submit" className="inputSubmit" />
+          </Button>
         </form>
       </>
     );
