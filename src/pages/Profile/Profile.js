@@ -54,7 +54,6 @@ function Profile(props) {
             <TabPanel>
               <MyReviews userId={props.user._id} />
             </TabPanel>
-
             <TabPanel>
               <MyServices userId={props.user._id} />
             </TabPanel>

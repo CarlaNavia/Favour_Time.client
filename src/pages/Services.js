@@ -39,7 +39,7 @@ class Services extends Component {
             <h1>{this.state.servicesType.serviceName} </h1>
           </div>
           {this.state.services.length > 0 && (
-            <ServiceList services={this.state.services} />
+            <ServiceList showMoreButton services={this.state.services} />
           )}
         </div>
       </>

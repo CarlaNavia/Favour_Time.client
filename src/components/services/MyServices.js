@@ -33,6 +33,7 @@ class MyServices extends Component {
             isOwner={true}
             services={this.state.listOfServices}
             onDelete={this.deleteService}
+            showMoreButton
           />
         )}
       </div>
