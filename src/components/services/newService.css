@@ -1,4 +1,7 @@
-
+.newContainer{
+    display: flex;
+    flex-direction: column;
+}
 .select select{
     appearance: none;
     -webkit-appearance: none;

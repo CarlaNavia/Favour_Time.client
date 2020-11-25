@@ -73,9 +73,10 @@ class NewService extends Component {
   render() {
     return (
       <>
+      <div className="newContainer">
         <form onSubmit={this.handleFormSubmit}>
           <label>Service Name:</label>
-          <br />
+          
           <input
             type="text"
             name="serviceName"
@@ -84,7 +85,7 @@ class NewService extends Component {
             required
             className="inputForm"
           />
-          <br />
+          
 
           <label for="serviceTypeID">Category:</label>
           <br />
@@ -184,6 +185,7 @@ class NewService extends Component {
             <input type="submit" value="Submit" className="inputSubmit" />
           </Button>
         </form>
+        </div>
       </>
     );
   }
