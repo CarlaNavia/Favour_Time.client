@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ServiceTypeService from "../lib/serviceType-service";
-import { withAuth } from "../lib/AuthProvider";
+import ServiceTypeService from "../../lib/serviceType-service";
+import { withAuth } from "../../lib/AuthProvider";
 
 
 class NewService extends Component {
@@ -47,7 +47,7 @@ class NewService extends Component {
       const newServiceResponse = await ServiceTypeService.newService(
         this.state
       );
-      const response = await ServiceTypeService.handleUpload(
+      await ServiceTypeService.handleUpload(
         this.state.imgService,
         newServiceResponse._id
       );

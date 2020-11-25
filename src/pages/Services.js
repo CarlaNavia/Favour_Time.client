@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ServiceTypeService from '../lib/serviceType-service';
 import { Link } from "react-router-dom";
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar/Navbar';
 
 class Services extends Component {
     state = {

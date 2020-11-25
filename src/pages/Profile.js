@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import MyBookings from "../components/MyBookings";
-import MyRequests from "../components/MyRequests";
-import MyReviews from "../components/MyReviews";
+import MyBookings from "../components/bookings/MyBookings";
+import MyRequests from "../components/bookings/MyRequests";
+import MyReviews from "../components/bookings/MyReviews";
 import UserDetails from "../components/UserDetails";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import MyServices from "../components/MyServices";
+import MyServices from "../components/services/MyServices";
 
 class Profile extends Component {
   getUserRating() {
@@ -22,6 +22,7 @@ class Profile extends Component {
     const averageReviews = result.rating / totalReviews;
     return averageReviews;
   }
+  
   rate = () => {
     const blackStar = Math.round(this.getUserRating());
     if (blackStar === 0) {
@@ -57,12 +58,12 @@ class Profile extends Component {
     console.log(this.rate(), "rating");
     return (
       <div>
-        <div class="columns is-mobile">
-          <div class="column is-three-quarters">
+        <div className="columns is-mobile">
+          <div className="column is-three-quarters">
             <h3>{this.props.user.name}</h3>
             <p>{this.props.user.credits} credits</p>
           </div>
-          <div class="column">
+          <div className="column">
             <img
               src={this.getImageProfile()}
               alt="profile"
@@ -71,15 +72,14 @@ class Profile extends Component {
             <p>{this.rate()}</p>
           </div>
         </div>
-        <div class="columns">
-          <div class="column">First column</div>
+        <div className="columns">
+          <div className="column">First column</div>
         </div>
-        <button onClick={this.props.history.goBack}>Back</button>
         <button onClick={this.props.history.goBack}>Back</button>
         <h3>{this.props.user.name}</h3>
         <p>{this.props.user.credits} credits</p>
 
-        <div class="container">
+        <div className="container">
           <Tabs>
             <TabList>
               <Tab>
