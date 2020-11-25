@@ -50,7 +50,7 @@ class Search extends Component {
   render() {
     return (
       <div className="wrapper">
-        <div class="search_box">
+        <div className="search_box">
         <input 
           type="search" 
           name="search" 

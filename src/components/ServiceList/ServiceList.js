@@ -24,7 +24,7 @@ class ServiceList extends Component {
                 <p className="description">{eachService.description}</p>
                 <p className="credits">{eachService.credits} credits</p>
               </div>
-              <div class="column is-one-fifth desktop">
+              <div className="column is-one-fifth desktop">
                 <Link to={`/service/edit/${eachService._id}`}>
                   <img className="icons" src="../../../edit.png" alt="edit" />
                 </Link>

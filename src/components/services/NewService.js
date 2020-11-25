@@ -89,7 +89,7 @@ class NewService extends Component {
 
           <label for="serviceTypeID">Category:</label>
           <br />
-          <div class="select">
+          <div className="select">
           <select name="serviceTypeID" value={this.state.serviceTypeID} onChange={(e) => this.handleChange(e)} required>
             <option value=""></option>
             {this.state.serviceTypeSelect.map((type) => {
@@ -154,7 +154,7 @@ class NewService extends Component {
 
           <label for="availableTime">Available Time:</label>
           <br />
-          <div class="select">
+          <div className="select">
           <select name="availableTime" value={this.state.availableTime} onChange={(e) => this.handleChange(e)} required>
             <option value=""></option>
             <option value="morning">Morning</option>
