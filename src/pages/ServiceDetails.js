@@ -82,59 +82,7 @@ class ServiceDetails extends Component {
 
 
     render (){
-        return( 
-        <>
-        <Navbar/>
-            <div key={this.state.serviceDetail._id}>
-                    <h3>Service Name:{this.state.serviceDetail.serviceName}</h3> 
-                    <h3>Description: {this.state.serviceDetail.description}</h3> 
-                    <h3>Availability: {this.state.serviceDetail.availableTime}</h3> 
-                    <h3>address:{this.state.serviceDetail.addressToBeHeld}</h3> 
-                    <h3>credits: {this.state.serviceDetail.credits}</h3> 
-                    <h3>Owner of the service: {this.state.owner.name}</h3>
-                    <img src={this.getImageProfile()} alt="service" style={{width: 50,  borderRadius: 50}}/>
-            </div>
- 
-            <form onSubmit={this.handleFormSubmit}>
-                    <label>Date:</label><br/>
-                    <input type="date" name="date" value={this.state.date} onChange={(e) => this.handleChange(e)}/><br/>
-                    
-                    <label>Time:</label><br/>
-                    <input type="time" name="time" value={this.state.time} onChange={(e) => this.handleChange(e)}/><br/>
-
-                    <label>Extra Information:</label><br/>
-                    <textarea type="text" name="extraInformation" value={this.state.extraInformation} onChange={(e) => this.handleChange(e)}/><br/>
-
-                    <input type="submit" value="Submit"/>
-            </form>
-
-            <div>
-
-    try {
-      await BookingService.newBooking(params.serviceID, {
-        date,
-        time,
-        extraInformation,
-      });
-      this.setState({
-        date: "",
-        time: "",
-        extraInformation: "",
-      });
-    } catch (error) {
-      console.log("Error while adding the service: ", error);
-    }
-  };
-  getImageProfile() {
-    if (this.state.serviceDetail.imageService === "") {
-      return this.state.serviceDetail.imageService;
-    } else {
-      return "/default-user-image.png";
-    }
-  }
-
-  render() {
-    console.log(this.state.serviceDetail, "this.state.serviceDetail");
+        
     return (
       <>
         <Navbar />
