@@ -29,7 +29,7 @@ class EditService extends Component {
   }
   handleImageService(event) {
     const files = event.target.files[0];
-    ServiceTypeService.handleUpload(files).then((data) => {
+    ServiceTypeService.handleUpload(files,  this.state.currentService._id).then((data) => {
       this.setState({ currentService: data });
     });
   }

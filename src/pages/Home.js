@@ -22,7 +22,7 @@ function Home() {
         <div className="mainContainer">
         
           <div className="searchContainer">
-            <h2 className="tituloSearch">Poner texto tipo pregunta ?</h2>
+            <h1 className="tituloSearch">What are you looking for?</h1>
             <Search />
           </div>
 
