@@ -58,6 +58,14 @@ a.buttonLink:hover{
     color: #fff;
 }
 
+.headerModal{
+    background-color:rgb(241, 241, 241) ;
+}
+.titleContainer{
+  margin-left: 205px;
+    color: black;
+}
+
 @media (max-width: 992px){
     .navbar-nav{
         display: flex!important;

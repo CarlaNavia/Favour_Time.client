@@ -7,8 +7,6 @@ class Faqs extends Component {
   render() {
     return (
      <>
-    
-          
           <Accordion defaultActiveKey="0" className="container">
             <Card>
               <Accordion.Toggle as={Card.Header} eventKey="0">
