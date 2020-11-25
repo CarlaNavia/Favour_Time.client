@@ -14,7 +14,6 @@ class MyBookings extends Component {
     BookingService.getBookingsByUserID(this.props.userId)
     .then((bookings) =>
       this.setState({ listOfBookings: bookings })
-
     );
   }
   
@@ -24,7 +23,6 @@ class MyBookings extends Component {
         <h1 className="h1_title">MY BOOKINGS</h1>
         { this.state.listOfBookings.length === 0 && "Unfortunately you have not booked any service yet."}
         { this.state.listOfBookings.length > 0 && <BookingList bookings={this.state.listOfBookings}/>}
-
       </div>
     );
   }

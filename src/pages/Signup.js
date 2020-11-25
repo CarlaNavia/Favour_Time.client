@@ -10,7 +10,6 @@ class Signup extends Component {
     const { name , lastName, email, password} = this.state;
 
     this.props.signup({ name , lastName, email, password });
-    this.props.history.push("/")
   };
 
   handleChange = (event) => {

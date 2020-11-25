@@ -87,22 +87,7 @@ const NavBar = (props) => {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <Modal
-            show={showFaq}
-            onHide={handleCloseFaq}
-            backdrop="static"
-            keyboard={false}
-          >
-            <Modal.Header closeButton>
-              <Modal.Title>
-                {" "}
-                <h1 className="h1_title">FREQUENT ASKED QUESTIONS</h1>{" "}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Faqs />
-            </Modal.Body>
-          </Modal>
+         
         </>
       ) : (
         <Navbar fixed="top" bg="light" expand="lg">
@@ -180,9 +165,9 @@ const NavBar = (props) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>
+          <Modal.Title className="titleContainerFaq">
             {" "}
-            <h1 className="h1_title">FREQUENT ASKED QUESTIONS</h1>{" "}
+           FREQUENT ASKED QUESTIONS{" "}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
