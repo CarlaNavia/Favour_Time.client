@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 125px;
+    z-index: 1;
 }
 
 .tituloSearch{
@@ -55,4 +56,7 @@
 .secondSection{
     background-color: rgb(241, 241, 241);
     padding: 100px;
+}
+.serviceTypeContainer{
+    z-index: 0;
 }

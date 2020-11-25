@@ -20,6 +20,7 @@ function Home() {
         <NavBar />
      
         <div className="mainContainer">
+        
           <div className="searchContainer">
             <h2 className="tituloSearch">Poner texto tipo pregunta ?</h2>
             <Search />

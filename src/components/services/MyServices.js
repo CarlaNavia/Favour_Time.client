@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import BookingService from "../../lib/booking-service";
-<<<<<<< HEAD:src/components/MyServices/MyServices.js
 import ServiceList from "../ServiceList/ServiceList";
-=======
-import ServiceList from "./ServiceList";
->>>>>>> 4a691e3e85fca136d0343f92a67bf5407589497f:src/components/services/MyServices.js
 
 class MyServices extends Component {
   state = {

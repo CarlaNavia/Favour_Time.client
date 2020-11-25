@@ -13,7 +13,7 @@
 
 a.liSearch{
     color: black;
-} */
+} 
 
 .search_box{
     width: 100%;
@@ -39,3 +39,7 @@ transition: .5s;
 }
 
 
+.search_Container{
+    position: absolute;
+    z-index: 1;
+}

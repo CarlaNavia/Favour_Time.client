@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import Navbar from "../components/navbar/Navbar";
 import { withAuth } from "../lib/AuthProvider";
+import './Signin.css';
 
 class Login extends Component {
   state = { email: "", password: "" };
@@ -9,21 +11,19 @@ class Login extends Component {
     const { email, password } = this.state;
 
     this.props.login({ email, password });
-    this.props.history.push("/")
   };
 
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+  
 
   render() {
     const { email, password } = this.state;
 
     return (
-      <div>
-        <h1>Login</h1>
-
+      <>
         <form onSubmit={this.handleFormSubmit}>
           <label>Email:</label>
           <input type='email' name='email' value={email} onChange={this.handleChange}/>
@@ -33,7 +33,8 @@ class Login extends Component {
 
           <input type='submit' value='Login' />
         </form>
-      </div>
+
+      </>
     );
   }
 }

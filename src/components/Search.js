@@ -60,10 +60,11 @@ class Search extends Component {
           onChange={(e)=> this.handleChange(e)} 
         />
         <ul>
+        <div className="search_Container">
         {this.state.filteredServiceList ? this.state.filteredServiceList.map((service, index)=> {
           return(
-
-              <li key={index}>
+          
+              <li key={index} >
               <Link className="liSearch" to={`/servicetype/${service.serviceType && service.serviceType._id}`}>
                 {service.serviceName} <br/>
                 {service.serviceType && service.serviceType.serviceName}
@@ -71,6 +72,7 @@ class Search extends Component {
               </li>
           )
         }) : "" }
+        </div>
         </ul>
         </div>
       </div>
