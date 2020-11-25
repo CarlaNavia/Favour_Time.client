@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import HeaderProfile from "../components/HeaderProfile";
+import Navbar from "../components/navbar/Navbar";
 import { withAuth } from "../lib/AuthProvider";
 import UserService from "../lib/user-service";
 
@@ -40,6 +41,8 @@ class EditProfile extends Component {
 
   render() {
     return (
+      <>
+      <Navbar/>
       <div className="container header">
         <HeaderProfile history={this.props.history} user={this.props.user} />
         <form onSubmit={(e) => this.handleSubmit(e)}>
@@ -58,6 +61,7 @@ class EditProfile extends Component {
           <button>Save</button>
         </form>
       </div>
+      </>
     );
   }
 }

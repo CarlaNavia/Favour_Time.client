@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Accordion, Card } from "react-bootstrap";
-import Navbar from "../components/navbar/Navbar";
 import "./Faq.css";
 
 class Faqs extends Component {
@@ -9,7 +8,7 @@ class Faqs extends Component {
      <>
           <Accordion defaultActiveKey="0" className="container">
             <Card>
-              <Accordion.Toggle as={Card.Header} eventKey="0">
+              <Accordion.Toggle as={Card.Header} className="headerModalFaqs" eventKey="0">
                 How do I create a FavTime account and edit my user profile?
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
@@ -26,7 +25,7 @@ class Faqs extends Component {
               </Accordion.Collapse>
             </Card>
             <Card>
-              <Accordion.Toggle as={Card.Header} eventKey="1">
+              <Accordion.Toggle as={Card.Header} className="headerModalFaqs" eventKey="1">
                 How can I book and review a service?
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="1">
@@ -43,7 +42,7 @@ class Faqs extends Component {
           </Accordion>
           <Accordion className="container">
             <Card>
-              <Accordion.Toggle as={Card.Header} eventKey="0">
+              <Accordion.Toggle as={Card.Header} className="headerModalFaqs" eventKey="0">
                 What can I do to post a good ad?
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
@@ -61,7 +60,7 @@ class Faqs extends Component {
               </Accordion.Collapse>
             </Card>
             <Card>
-              <Accordion.Toggle as={Card.Header} eventKey="1">
+              <Accordion.Toggle as={Card.Header} className="headerModalFaqs" eventKey="1">
                 I have an issue or suggestion that I would like to share, how do
                 I do it?
               </Accordion.Toggle>

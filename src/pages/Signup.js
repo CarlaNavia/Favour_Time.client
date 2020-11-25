@@ -21,28 +21,16 @@ class Signup extends Component {
   render() {
     const { name , lastName, email, password } = this.state;
     return (
-      <div>
-        <h1>Sign Up</h1>
-
+      <>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Name:</label>
-          <input type='text' name='name' value={name} onChange={this.handleChange}/>
+          <input type='text' name='name' value={name} className="input-Form"  placeholder="Name" onChange={this.handleChange}/>
+          <input type='text' name='lastName' value={lastName} className="input-Form"  placeholder="Last name" onChange={this.handleChange}/>
+          <input type='email' name='email' value={email} className="input-Form" placeholder="Email" onChange={this.handleChange}/>
+          <input type='password' name='password' value={password} className="input-Form" placeholder="Password" onChange={this.handleChange}/>
 
-          <label>Last Name:</label>
-          <input type='text' name='lastName' value={lastName} onChange={this.handleChange}/>
-
-          <label>Email:</label>
-          <input type='email' name='email' value={email} onChange={this.handleChange}/>
-
-          <label>Password:</label>
-          <input type='password' name='password' value={password} onChange={this.handleChange}/>
-
-          <input type='submit' value='Signup' />
+          <input type='submit' className="signin-btn" value='SIGN UP' />
         </form>
-
-        <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
-      </div>
+      </>
     );
   }
 }

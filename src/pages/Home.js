@@ -9,6 +9,7 @@ import { Button, Modal } from 'react-bootstrap';
 import Search from "../components/Search";
 
 function Home() {
+
   const [show, setShow] = React.useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -40,8 +41,10 @@ function Home() {
         backdrop="static"
         keyboard={false}
       >
-      <Modal.Header closeButton>
+      <Modal.Header closeButton className="headerModalService">
+      <div className="titleContainerService">
         <Modal.Title>New Service</Modal.Title>
+      </div>
       </Modal.Header>
         <Modal.Body>
           <NewService/>
@@ -49,9 +52,6 @@ function Home() {
       </Modal>
     <div className="secondSection">
 
-      <div className="randomContainer">
-          <RandomServices />
-      </div>
       <div className="randomContainer">
           <RandomServices />
       </div>

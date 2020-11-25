@@ -1,1 +1,23 @@
+.containerRandom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
+.cardRandom{
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #D2BB7A;
+    padding: 5px;
+    text-decoration: none;
+    color: #273746;
+    text-align: center;
+    max-height: 250px;
+}
+
+.cardRandom>card-img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 140px;
+  }

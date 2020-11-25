@@ -1,0 +1,68 @@
+.titleCredits{
+    margin-top: 250px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+.h1Container{
+    border-bottom: 2px solid rgb(232,110,108);
+    border-left: 2px solid rgb(232,110,108);
+    width: 50%;
+    padding: 10px;
+    text-align: start;
+}
+.boxCredits{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cardPrice{
+    background-color: rgb(241, 241, 241);
+    border-radius: 1rem;
+    margin: 10px;
+}
+.secondSeccion{
+    background-color: rgb(241, 241, 241);
+}
+
+.titlePrice{
+    color: black;
+    text-decoration: underline;
+}
+.buttonBuy{
+   align-items: center;
+   justify-content: center;
+}
+.textPrice{
+    color: black;
+}
+
+.cardPrice:hover, .cardPrice:focus, .cardPrice:active {
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: box-shadow ease-in-out 200ms,transform ease-in-out 200ms;
+    transition-delay: 50ms;
+    background-color:rgba(232, 110, 108, 0.541);
+    text-decoration: none;
+    list-style: none;
+    border: 1px solid rgb(232,110,108);
+   
+  }
+
+@media screen and (min-width:650px){
+    .boxCredits{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+        margin-bottom: 40px;
+        margin-left: 40px;
+        margin-right: 40px;;
+    }
+
+    .cardPrice{
+        margin: 10px;
+    }
+
+}

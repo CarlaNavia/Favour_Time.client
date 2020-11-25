@@ -11,39 +11,49 @@
 .select{
   position: relative;
   width: 100%;
-  padding-top: 5px;
+  margin: 10px 0px;
+}
+.input-Form{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #999;
+    outline: none;
 }
  
 .select select{
 	display: inline-block;
 	width: 100%;
 	cursor: pointer;
-  	padding: 7px 10px;
-  	height: 42px;
-  	outline: 0; 
-  	border: 0;
-	border-radius: 0;
-	background: rgba(0,0,0,0.10);
-	color: #fff ;
-	font-size: 1em;
-	font-family: 
-	'Quicksand', sans-serif;
-	border:2px solid rgba(0,0,0,0.2);
-    border-radius: 12px;
-    position: relative;
+  	outline: none; 
+    border-radius: 20px;
+    color: #999;
+    height: 45px;
+    padding: 7px 10;
+    border: 1px solid #999;
     transition: all 0.25s ease;
 }
 
-.select select:hover{
-	background: #B5B1B1;
+.select select:hover, .input-Form:hover{
+    border: 1px solid rgb(232,110,108);
+    color: rgb(232,110,108);
+}
+
+.select select:hover::placeholder, .input-Form:hover::placeholder{
+    color: rgb(232,110,108);
 }
 
 .upload{
-    padding: 5px 10px;
     margin-top: 18px;
-    background-color:#D9D9D9;
-    color:#fff;
+    color:#999;
     border:0px solid #fff;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #999;
+    outline: none;
 }
  
 .upload:hover{
@@ -51,23 +61,21 @@
     background: #D9D9D9;
 }
 
-.inputForm[type=text], .inputForm[type=number]{
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px 5px;
-    background: rgba(0,0,0,0.10);
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #fff;
-    margin-top: 5px;
-    font-weight: bold;
-    color: #fff;
+
+.input-Form::placeholder{
+    color: #999;
 }
 
-.inputSubmit[type=submit]{
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    background-color: rgb(232,110,108);
+.signin-btn{
     color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(198,182,157);
 }
+

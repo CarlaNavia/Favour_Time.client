@@ -36,20 +36,22 @@ class RandomServices extends Component {
             <>
             {this.state.randomServices.map((random)=> {
                 return(
-    
-                    <Card style={{ width: '18rem' }} key={random._id} className="cardRandom">
-                    <Link to={`/services/${random._id}`}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                    <Card.Title>{random.serviceName}</Card.Title>
-                    <Card.Text>
-                        {random.description}<br/>
-                        {random.credits}
-                    </Card.Text>
-                    </Card.Body>
-                    </Link>
-                    </Card>
-     
+                    <div className="containerRandom">
+                    <div className="cardRandom">
+                        <Card style={{ width: '18rem'}} key={random._id} className="cardRandom h-100">
+                        <Link to={`/services/${random._id}`}>
+                        <Card.Img variant="top" src={random.imageService} />
+                        <Card.Body>
+                        <Card.Title>{random.serviceName}</Card.Title>
+                        <Card.Text>
+                            {random.description}<br/>
+                            {random.credits}
+                        </Card.Text>
+                        </Card.Body>
+                        </Link>
+                        </Card>
+                    </div>
+                    </div>
                 )
             }).slice(0,4)}
             </>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Navbar from "../components/navbar/Navbar";
 import { withAuth } from "../lib/AuthProvider";
 import './Signin.css';
 
@@ -9,7 +8,6 @@ class Login extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const { email, password } = this.state;
-
     this.props.login({ email, password });
   };
 
@@ -27,6 +25,7 @@ class Login extends Component {
         <form onSubmit={this.handleFormSubmit}>
           <input type='email' name='email' value={email} placeholder="Email" className="input-Form" onChange={this.handleChange}/>
           <input type='password' name='password' value={password} placeholder="Password" className="input-Form" onChange={this.handleChange}/>
+    
           <input type='submit' className="signin-btn" value='LOGIN' />
         </form>
 

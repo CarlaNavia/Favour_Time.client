@@ -32,7 +32,7 @@ class HeaderProfile extends Component {
           <h3>{this.props.user.name}</h3>
           <p>{this.props.user.credits} credits</p>
           <div className="align_buttons">
-           
+          
               <Link className="buttons_profile" to={`/profile/edit/${this.props.user._id}`}>
                 Edit Profile
               </Link>

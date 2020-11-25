@@ -81,7 +81,6 @@ class ServiceDetails extends Component {
 
 
     render (){
-        console.log(this.state.serviceDetail, 'this.state.serviceDetail')
         return( 
         <>
         <Navbar/>

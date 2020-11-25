@@ -56,8 +56,9 @@ const NavBar = (props) => {
           </Button>
          
           <Button variant="outline-danger" size="lg" onClick={handleShowFaq}>
-            <img src='../../../Icons/informacion.png' alt="info" className="imgButton"/> Info
+            <img src='../../../Icons/informacion.png' alt="info" className="imgButton"/>   Info
           </Button>
+
           <Button variant="outline-danger" className="space" size="lg">
             <Link to='/#' className="buttonLink" onClick={logout} >Logout</Link>
           </Button>
@@ -65,19 +66,6 @@ const NavBar = (props) => {
       </Nav>
     </Navbar.Collapse>
     </Navbar>
-    <Modal
-        show={showFaq}
-        onHide={handleCloseFaq}
-        backdrop="static"
-        keyboard={false}
-      >
-      <Modal.Header closeButton>
-        <Modal.Title> <h1 className="h1_title">FREQUENT ASKED QUESTIONS</h1> </Modal.Title>
-      </Modal.Header>
-        <Modal.Body >
-          <Faqs/>
-        </Modal.Body>
-        </Modal>
      </>
         ) : (
         <Navbar fixed="top" bg="light" expand="lg">
@@ -124,8 +112,8 @@ const NavBar = (props) => {
         backdrop="static"
         keyboard={false}
       >
-      <Modal.Header closeButton>
-        <Modal.Title> Sing up </Modal.Title>
+      <Modal.Header closeButton className="headerModal">
+        <Modal.Title> </Modal.Title>
       </Modal.Header>
         <Modal.Body>
           <Signup/>
@@ -138,8 +126,10 @@ const NavBar = (props) => {
         backdrop="static"
         keyboard={false}
       >
-      <Modal.Header closeButton>
-        <Modal.Title> <h1 className="h1_title">FREQUENT ASKED QUESTIONS</h1> </Modal.Title>
+      <Modal.Header closeButton className="headerModal">
+      <div className="titleContainerFaq">
+        <Modal.Title> FREQUENT ASKED QUESTIONS </Modal.Title>
+        </div>
       </Modal.Header>
         <Modal.Body >
           <Faqs/>
