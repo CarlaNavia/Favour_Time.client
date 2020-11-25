@@ -26,9 +26,8 @@ class HeaderProfile extends Component {
 
   render() {
     return (
-      <div className="columns is-mobile">
+      <div className="columns is-mobile heading_position">
         <div className="column is-four-fifths-desktop ">
-          <button onClick={this.props.history.goBack}>Back</button>
           <h3>{this.props.user.name}</h3>
           <p>{this.props.user.credits} credits</p>
           <div className="align_buttons">
