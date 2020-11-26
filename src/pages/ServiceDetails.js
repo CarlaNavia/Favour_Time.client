@@ -158,7 +158,7 @@ class ServiceDetails extends Component {
             <input className="buttons_profile" type="submit" value="Submit" />
           </form>
         </div>
-        <div class="column">
+        <div className="column">
           <div className="map">
             <img 
               className="align_map"

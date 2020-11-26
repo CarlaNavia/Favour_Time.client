@@ -15,7 +15,7 @@ class MyReviews extends Component {
     );
   }
   render() {
-      console.log(this.state.listOfReviews)
+
     return (
       <div>
         <h1>My reviews:</h1>

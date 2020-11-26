@@ -20,7 +20,7 @@ class Search extends Component {
     const filteredList = [...this.state.searchList].filter( serviceObj => {
       return serviceObj.serviceName.toLowerCase().includes(searchedTerm);
     })
-    console.log(filteredList, 'filteredList')
+   
     this.setState({filteredServiceList: filteredList})
   }
   
@@ -53,7 +53,7 @@ class Search extends Component {
       <div className="wrapperSearch">
         <div className="">
         <Form>
-        <FormControl type="text" placeholder="Search in all categories" name="search" className="mr-lg-2" value={this.state.search}  onChange={(e)=> this.handleChange(e)} autocomplete="off" />
+        <FormControl type="text" placeholder="Search in all categories" name="search" className="mr-lg-2" value={this.state.search}  onChange={(e)=> this.handleChange(e)} autoComplete="off" />
         </Form>
 
         <div className="search_Container">

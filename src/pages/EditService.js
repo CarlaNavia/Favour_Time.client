@@ -54,7 +54,7 @@ class EditService extends Component {
   };
 
   render() {
-    console.log(this.state.currentService, "map")
+
     return (
       <div className="container header">
         <HeaderProfile history={this.props.history} user={this.props.user} />
