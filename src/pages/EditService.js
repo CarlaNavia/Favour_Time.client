@@ -30,9 +30,11 @@ class EditService extends Component {
   }
   handleImageService(event) {
     const files = event.target.files[0];
-    ServiceTypeService.handleUpload(files,  this.state.currentService._id).then((data) => {
-      this.setState({ currentService: data });
-    });
+    ServiceTypeService.handleUpload(files, this.state.currentService._id).then(
+      (data) => {
+        this.setState({ currentService: data });
+      }
+    );
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -54,17 +56,16 @@ class EditService extends Component {
   };
 
   render() {
-
     return (
       <div className="container header">
         <HeaderProfile history={this.props.history} user={this.props.user} />
         <Link to={"/profile"}>
-            <img
-              className="icons"
-              src="../../002-flecha-izquierda.png"
-              alt="back"
-            />
-          </Link>
+          <img
+            className="icons"
+            src="../../002-flecha-izquierda.png"
+            alt="back"
+          />
+        </Link>
         <h1 className="h1_title ">EDIT MY SERVICE</h1>
         <form className="align_form" onSubmit={(e) => this.handleSubmit(e)}>
           <label>Service Name:</label>
@@ -75,18 +76,28 @@ class EditService extends Component {
             onChange={(e) => this.handleInputChange(e, "serviceName")}
           />
           <br />
-          <label for="serviceTypeID">Service Type:</label>
+          <label htmlFor="serviceTypeID">Service Type:</label>
           <select
-          className="form_profile"
+            className="form_profile"
             name="serviceTypeID"
-            value={this.state.currentService.serviceTypeID}
-            onChange={(e) => this.handleInputChange(e)}
+            value={
+              this.state.currentService.serviceType &&
+              this.state.currentService.serviceType._id
+            }
+            onChange={(e) => this.handleInputChange(e, "serviceType")}
             required
           >
             <option value=""></option>
             {this.state.serviceTypeSelect.map((type) => {
               return (
-                <option key={type._id} value={type._id}>
+                <option
+                  key={type._id}
+                  value={type._id}
+                  selected={
+                    this.state.currentService.serviceType &&
+                    this.state.currentService.serviceType._id === type._id
+                  }
+                >
                   {type.serviceName}
                 </option>
               );
@@ -140,7 +151,7 @@ class EditService extends Component {
             defaultValue={this.state.currentService.credits}
             onChange={(e) => this.handleInputChange(e, "credits")}
           />
-          <button className="buttons_profile">Save</button>  <br />
+          <button className="buttons_profile">Save</button> <br />
         </form>
       </div>
     );
