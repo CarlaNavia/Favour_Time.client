@@ -31,6 +31,7 @@ const NavBar = (props) => {
     setShowSignup(true);
     setShow(false);
   };
+  
   return (
     <>
       {isLoggedin ? (
@@ -39,23 +40,6 @@ const NavBar = (props) => {
             <Link to="/" className="logoNavbar">
               <h1 className="nameLogo">FavTime</h1>
             </Link>
-<<<<<<< HEAD
-          </Button>
-         
-          <Button variant="outline-danger" size="lg" onClick={handleShowFaq}>
-            <img src='../../../Icons/informacion.png' alt="info" className="imgButton"/>   Info
-          </Button>
-
-          <Button variant="outline-danger" className="space" size="lg">
-            <Link to='/#' className="buttonLink" onClick={logout} >Logout</Link>
-          </Button>
-         
-      </Nav>
-    </Navbar.Collapse>
-    </Navbar>
-     </>
-        ) : (
-=======
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
@@ -104,25 +88,9 @@ const NavBar = (props) => {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <Modal
-            show={showFaq}
-            onHide={handleCloseFaq}
-            backdrop="static"
-            keyboard={false}
-          >
-            <Modal.Header closeButton>
-              <Modal.Title>
-                {" "}
-                <h1 className="h1_title">FREQUENT ASKED QUESTIONS</h1>{" "}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Faqs />
-            </Modal.Body>
-          </Modal>
+         
         </>
       ) : (
->>>>>>> 595a45954af3bb81abc292281c14eafc0cd98980
         <Navbar fixed="top" bg="light" expand="lg">
           <Link to="/" className="logoNavbar">
             <h1 className="nameLogo">FavTime</h1>
@@ -183,15 +151,9 @@ const NavBar = (props) => {
         backdrop="static"
         keyboard={false}
       >
-<<<<<<< HEAD
       <Modal.Header closeButton className="headerModal">
         <Modal.Title> </Modal.Title>
       </Modal.Header>
-=======
-        <Modal.Header closeButton>
-          <Modal.Title> Sing up </Modal.Title>
-        </Modal.Header>
->>>>>>> 595a45954af3bb81abc292281c14eafc0cd98980
         <Modal.Body>
           <Signup />
         </Modal.Body>
@@ -203,24 +165,14 @@ const NavBar = (props) => {
         backdrop="static"
         keyboard={false}
       >
-<<<<<<< HEAD
-      <Modal.Header closeButton className="headerModal">
-      <div className="titleContainerFaq">
-        <Modal.Title> FREQUENT ASKED QUESTIONS </Modal.Title>
-        </div>
-      </Modal.Header>
-        <Modal.Body >
-          <Faqs/>
-=======
         <Modal.Header closeButton>
-          <Modal.Title>
+          <Modal.Title className="titleContainerFaq">
             {" "}
-            <h1 className="h1_title">FREQUENT ASKED QUESTIONS</h1>{" "}
+           FREQUENT ASKED QUESTIONS{" "}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Faqs />
->>>>>>> 595a45954af3bb81abc292281c14eafc0cd98980
         </Modal.Body>
       </Modal>
     </>

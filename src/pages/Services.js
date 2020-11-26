@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ServiceTypeService from "../lib/serviceType-service";
-import { Link } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import ServiceList from "../components/ServiceList/ServiceList";
 import "./Services.css";

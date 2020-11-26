@@ -1,0 +1,22 @@
+footer{
+    bottom: 0px;
+    width: 100%;
+    background-color: #A2A0A0;
+    color: #040404;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 20px;
+    background-color: #353535;
+  }
+  .bottom center span{
+    color: #D9D9D9;
+  }
+  .bottom center span a{
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .bottom center a:hover{
+    text-decoration: underline;
+  }

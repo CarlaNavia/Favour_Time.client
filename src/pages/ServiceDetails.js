@@ -83,11 +83,9 @@ class ServiceDetails extends Component {
   }
 
   render() {
-    console.log(this.state.serviceDetail, "this.state.serviceDetail");
     return (
       <>
         <Navbar />
-
         <div className="container header" key={this.state.serviceDetail._id}>
           <h1 className="h1_title ">LET'S BOOK THIS SERVICE!</h1>
           <h3>Service Name:{this.state.serviceDetail.serviceName}</h3>

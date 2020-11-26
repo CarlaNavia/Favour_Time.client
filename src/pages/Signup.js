@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 
 class Signup extends Component {
@@ -10,7 +9,6 @@ class Signup extends Component {
     const { name , lastName, email, password} = this.state;
 
     this.props.signup({ name , lastName, email, password });
-    this.props.history.push("/")
   };
 
   handleChange = (event) => {

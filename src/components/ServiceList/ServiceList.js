@@ -10,6 +10,7 @@ class ServiceList extends Component {
         {this.props.services.map((eachService, index) => {
           return (
             <ServiceListItem
+              key={index}
               oneService={eachService}
               isOwner={this.props.isOwner}
               onDelete={this.props.onDelete}
