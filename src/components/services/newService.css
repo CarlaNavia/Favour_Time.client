@@ -64,16 +64,14 @@
 .input-Form::placeholder{
     color: #999;
 }
-.input-Submit{
-    border: none;
-    background-color: rgb(198, 182, 157);
-    text-decoration: underline;
-    color: #fff;
+.containerBtn{
+    display: flex;
+    justify-content: center;
 }
 
 .signin-btn{
     color: #fff;
-    width: 100%;
+    width: 80%;
     padding: 10px;
     border-radius: 20px;
     font-size: 15px;
@@ -82,5 +80,19 @@
     outline: none;
     cursor: pointer;
     background-color: rgb(198,182,157);
+}
+
+.signin-input{
+    background-color: rgb(198,182,157);
+    color: #fff;
+    border: none;
+    outline: none;
+}
+.signin-btn:hover, .signin-btn:focus, .signin-btn:active{
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: box-shadow ease-in-out 150ms,transform ease-in-out 150ms;
+    transition-delay: 50ms;
 }
 

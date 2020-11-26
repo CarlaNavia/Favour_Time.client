@@ -185,10 +185,13 @@ class NewService extends Component {
               style={{ display: 'none' }}
             />
             <div id="info"></div>
-         
-            <Button variant="outline-danger" size="lg" className="signin-btn">
-              <input type="submit" value="NEW SERVICE" className="signin-btn"/>
-            </Button>
+
+              <div className="containerBtn">
+                <Button variant="" size="lg" className="signin-btn">
+                  <input type="submit" value="NEW SERVICE" className="signin-input"/>
+                </Button>
+              </div>
+
           </form>
         </div>
       </>

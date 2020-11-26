@@ -12,7 +12,7 @@ const NavBar = (props) => {
     if (props.user.imageProfile !== "") {
       return props.user.imageProfile;
     } else {
-      return "/default-user-image.png";
+      return "../../../default-user-image.png";
     }
   }
   const { user, logout, isLoggedin } = props;
@@ -165,7 +165,7 @@ const NavBar = (props) => {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="headerFaq">
           <Modal.Title className="titleContainerFaq">
             {" "}
            FREQUENT ASKED QUESTIONS{" "}

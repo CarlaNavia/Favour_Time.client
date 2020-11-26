@@ -53,9 +53,9 @@ class Search extends Component {
       <div className="wrapperSearch">
         <div className="">
         <Form>
-        <FormControl type="text" placeholder="Search in all categories" name="search" className="mr-lg-2" value={this.state.search}  onChange={(e)=> this.handleChange(e)} autocomplete="off" />
+        <FormControl type="text" placeholder=" Search in all categories" name="search" className="mr-lg-2" value={this.state.search}  onChange={(e)=> this.handleChange(e)} autoComplete="off" /> 
         </Form>
-
+        
         <div className="search_Container">
         {this.state.filteredServiceList ? this.state.filteredServiceList.map((service, index)=> {
           return(

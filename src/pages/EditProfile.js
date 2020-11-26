@@ -60,6 +60,13 @@ class EditProfile extends Component {
       <Navbar/>
       <div className="container header">
         <HeaderProfile history={this.props.history} user={this.props.user} />
+        <Link to={"/profile"}>
+            <img
+              className="icons"
+              src="../../002-flecha-izquierda.png"
+              alt="back"
+            />
+          </Link>
         <h1 className="h1_title ">EDIT MY PROFILE</h1>
         <form className="align_form" onSubmit={(e) => this.handleSubmit(e)}>
           <label>Name:</label>
