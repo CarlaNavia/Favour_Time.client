@@ -22,15 +22,16 @@ class BookingList extends Component {
     return <Link to={`/add-a-review/${bookingId}`} className="buttons_profile">Review</Link>;
   }
   render() {
+  
     return (
       <ul>
         {this.props.bookings.map((eachBooking, index) => {
+          const formatDate = new Date(eachBooking.date).toDateString()
           return (
-            
             <div key={eachBooking._id} className="columns is-mobile border">
               <div className="column is-two-fifths-desktop">
                 <p className="name">{eachBooking.service.serviceName}</p>
-                <p>{eachBooking.date}</p>
+                <p>{formatDate}</p>
                 <p>{eachBooking.time}</p>
               </div>
               <div className="column">

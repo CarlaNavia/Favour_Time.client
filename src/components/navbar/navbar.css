@@ -74,7 +74,10 @@ a.buttonLink:hover{
 }
 .headerFaq{
     background-color: rgb(241, 241, 241);
+}
 
+.navbarContainer{
+    margin-top: 72px;
 }
 
 @media (max-width: 992px){
@@ -88,7 +91,7 @@ a.buttonLink:hover{
         display: flex!important;
         flex-basis: auto;
         justify-content: center;
-        width: 50%;
+        width: 52%;
     }
  
 }

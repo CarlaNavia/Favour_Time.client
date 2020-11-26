@@ -13,6 +13,7 @@
     color: #273746;
     text-align: center;
     max-height: 250px;
+    border-radius:3rem;
 }
 
 .cardRandom>card-img {

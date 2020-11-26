@@ -1,0 +1,54 @@
+.navbarContainer{
+    position: fixed;
+    top: 0px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.navbarInfo{
+    padding: 0px;
+}
+.containerInfoSpan{
+    display: inline;
+}
+
+.BFIcon{
+    margin-left: 27%;
+    margin-top: 7px;
+    color: #fff;
+}
+.textInfo{
+    color: rgb(232, 110, 108);
+    margin-top: 10px;
+    margin-left: 10%;
+    display: inline;
+}
+.infoSpan{
+    display: none;
+    margin-left:  3%;
+}
+.containerDiscount{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.date{
+    color: #fff;
+    margin-left: 10px;
+}
+@media screen and (min-width:992px){
+    .infoSpan{
+        display: block;
+    }
+    .infoDate{
+        display: none;
+    }
+    .containerInfoSpan{
+        display: inline;
+        margin-top: -22px;
+    }
+    .BFIcon{
+        margin-left: 50%;
+    }
+}
