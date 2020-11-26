@@ -9,7 +9,7 @@ import Faqs from "../../pages/Faqs";
 
 const NavBar = (props) => {
   function getImageProfile() {
-    if (props.user.imageProfile === "") {
+    if (props.user.imageProfile !== "") {
       return props.user.imageProfile;
     } else {
       return "/default-user-image.png";

@@ -3,6 +3,7 @@ import ServiceTypeService from '../../lib/serviceType-service';
 import { Link } from "react-router-dom";
 import { Card } from 'react-bootstrap';
 import './serviceType.css';
+
 class RandomServices extends Component {
     state = { 
       randomServices: [],
@@ -38,7 +39,7 @@ class RandomServices extends Component {
                 return(
                         <Card style={{ width: '18rem'}} key={random._id} className="cardRandom">
                         <Link to={`/services/${random._id}`}>
-                        <Card.Img variant="top" src={random.imageService} />
+                        <Card.Img className="align_photos" variant="top" src={random.imageService} />
                         <Card.Body>
                         <Card.Title>{random.serviceName}</Card.Title>
                         <Card.Text>

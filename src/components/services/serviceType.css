@@ -48,3 +48,7 @@
       text-decoration: none;
       list-style: none;
   }
+  .align_photos{
+    object-fit: cover;
+    height: 150px;
+  }

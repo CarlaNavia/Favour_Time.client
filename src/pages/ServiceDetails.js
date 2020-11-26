@@ -75,7 +75,7 @@ class ServiceDetails extends Component {
     }
   };
   getImageProfile() {
-    if (this.state.serviceDetail.imageService === "") {
+    if (this.state.serviceDetail.imageService !== "") {
       return this.state.serviceDetail.imageService;
     } else {
       return "/default-user-image.png";
@@ -84,61 +84,91 @@ class ServiceDetails extends Component {
 
   render() {
     return (
-      <>
+      <div className="container header" key={this.state.serviceDetail._id}>
         <Navbar />
-        <div className="container header" key={this.state.serviceDetail._id}>
-          <h1 className="h1_title ">LET'S BOOK THIS SERVICE!</h1>
-          <h3>Service Name:{this.state.serviceDetail.serviceName}</h3>
-          <h3>Description: {this.state.serviceDetail.description}</h3>
-          <h3>Availability: {this.state.serviceDetail.availableTime}</h3>
-          <h3>address:{this.state.serviceDetail.addressToBeHeld}</h3>
-          <h3>credits: {this.state.serviceDetail.credits}</h3>
-          <h3>Owner of the service: {this.state.owner.name}</h3>
-          <img
-            src={this.getImageProfile()}
-            alt="service"
-            style={{ width: 50, borderRadius: 50 }}
-          />
+        <h1 className="h1_title ">LET'S BOOK THIS SERVICE!</h1>
+        <div className="columns is-flex-desktop-only">
+          <div className="column is-one-third  center_text">
+            <p>
+              <strong>Service Name:</strong>
+              {this.state.serviceDetail.serviceName}
+            </p>
+            <p>
+              <strong>Description: </strong>
+              {this.state.serviceDetail.description}
+            </p>
+            <p>
+              <strong>Availability:</strong>{" "}
+              {this.state.serviceDetail.availableTime}
+            </p>
+            <p>
+              <strong>Address:</strong>
+              {this.state.serviceDetail.addressToBeHeld}
+            </p>
+            <p>
+              <strong>Credits:</strong> {this.state.serviceDetail.credits}
+            </p>
+            <p>
+              <strong>Owner of the service: </strong>
+              {this.state.owner.name}
+            </p>
+            <img
+              src={this.getImageProfile()}
+              alt="service"
+              style={{ width: 100 }}
+            />
+          </div>
+          <br />
+      
+        <div className="column">
+          <form onSubmit={this.handleFormSubmit} className="align_form">
+            <label>Date:</label>
+
+            <input
+              className="form_profile"
+              type="date"
+              name="date"
+              value={this.state.date}
+              onChange={(e) => this.handleChange(e)}
+            />
+            <br />
+
+            <label>Time:</label>
+
+            <input
+              className="form_profile"
+              type="time"
+              name="time"
+              value={this.state.time}
+              onChange={(e) => this.handleChange(e)}
+            />
+            <br />
+
+            <label>Extra Information:</label>
+
+            <textarea
+              className="form_profile"
+              type="text"
+              name="extraInformation"
+              value={this.state.extraInformation}
+              onChange={(e) => this.handleChange(e)}
+            />
+            <br />
+
+            <input className="buttons_profile" type="submit" value="Submit" />
+          </form>
         </div>
-
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Date:</label>
-          <br />
-          <input
-            type="date"
-            name="date"
-            value={this.state.date}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <br />
-
-          <label>Time:</label>
-          <br />
-          <input
-            type="time"
-            name="time"
-            value={this.state.time}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <br />
-
-          <label>Extra Information:</label>
-          <br />
-          <textarea
-            type="text"
-            name="extraInformation"
-            value={this.state.extraInformation}
-            onChange={(e) => this.handleChange(e)}
-          />
-          <br />
-
-          <input type="submit" value="Submit" />
-        </form>
-
-        <div>
-          <img src={this.state.imageMap} alt="Location of service" />
+        <div class="column">
+          <div className="map">
+            <img 
+              className="align_map"
+              src={this.state.imageMap}
+              alt="Location of service"
+            />
+          </div>
         </div>
-      </>
+      </div>
+      </div>
     );
   }
 }
