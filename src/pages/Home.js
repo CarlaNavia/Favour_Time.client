@@ -48,7 +48,7 @@ function Home() {
       </div>
       </Modal.Header>
         <Modal.Body>
-          <NewService/>
+          <NewService onClose={handleClose}/>
         </Modal.Body>
       </Modal>
     <div className="secondSection">

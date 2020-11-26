@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookingService from "../../lib/booking-service";
+import "../../pages/Profile/Profile.css"
 
 class MyReviews extends Component {
   state = {
@@ -18,7 +19,7 @@ class MyReviews extends Component {
 
     return (
       <div>
-        <h1>My reviews:</h1>
+        <h1 className="h1_title">MY REVIEWS</h1>
         {this.state.listOfReviews.length === 0 &&
           "Unfortunately you don't have any review yet."}
 

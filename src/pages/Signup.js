@@ -8,7 +8,8 @@ class Signup extends Component {
     event.preventDefault();
     const { name, lastName, email, password } = this.state;
 
-    this.props.signup({ name, lastName, email, password });
+    this.props.signup({ name, lastName, email, password })
+    this.props.onClose()
   };
 
   handleChange = (event) => {

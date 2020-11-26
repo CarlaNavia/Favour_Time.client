@@ -8,11 +8,14 @@ import Signup from "../../pages/Signup";
 import Faqs from "../../pages/Faqs";
 
 const NavBar = (props) => {
+  
   function getImageProfile() {
-    if (props.user.imageProfile !== "") {
+    
+    if (!!props.user.imageProfile) {
+      
       return props.user.imageProfile;
     } else {
-      return "../../../default-user-image.png"
+      return "/default-user-image.png"
     }
   }
   const { user, logout, isLoggedin } = props;
@@ -136,7 +139,7 @@ const NavBar = (props) => {
           </div>
         </Modal.Header>
         <Modal.Body>
-          <Login />
+          <Login onClose={handleClose}/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="outline-danger" size="lg" onClick={handleShowSignup}>
@@ -155,7 +158,7 @@ const NavBar = (props) => {
         <Modal.Title> </Modal.Title>
       </Modal.Header>
         <Modal.Body>
-          <Signup />
+          <Signup onClose={handleCloseSignup}/>
         </Modal.Body>
       </Modal>
 
