@@ -1,15 +1,38 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Navbar } from "react-bootstrap";
+import './footer.css';
+
 export default function Footer() {
     return (
-        <footer>
-        <div className="bottom">
-          <center>  
-            <span className="credit">Create By <Link to="/#">Carla Navia & Jonathan Jimenez</Link> | </span>
-            <span className="far fa-copyright"></span><span> 2020 All rights reserved.</span>
-          </center>
-        </div>
-      </footer>
+  <Navbar sticky="bottom" bg="light" className="navbarInfo">
+    <Navbar.Brand href="#home"  className="containerFooter">
+    <div className="containerIcons">
+      <img
+        alt="facebook"
+        src="../../Icons/facebook.png"
+        width="30"
+        height="30"
+        className="iconFooter align-center"
+      />
+      <img
+        alt="twiiter"
+        src="../../Icons/twitter.png"
+        width="30"
+        height="30"
+        className="iconFooter align-center"
+      />
+      <img
+        alt="instagram"
+        src="../../Icons/instagram.png"
+        width="30"
+        height="30"
+        className="iconFooter align-center"
+      />
+
+    </div>
+  
+    </Navbar.Brand>
+  </Navbar>
     )
 }
 

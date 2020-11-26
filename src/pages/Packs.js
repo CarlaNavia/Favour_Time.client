@@ -5,6 +5,7 @@ import UserService from "../lib/user-service";
 import "./packs.css";
 import { Card, Button } from "react-bootstrap";
 import RandomServices from "../components/services/RandomServices";
+import NavbarInfo from "../components/navbar/NavbarInfo";
 
 class Packs extends Component {
   addCredits(credits) {
@@ -17,8 +18,12 @@ class Packs extends Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar/>
+       <div className="navbarContainer">
+       <NavbarInfo/>
+       </div>
         <div className="titleCredits">
+       
           <div className="h1Container">
             <h1>No time? Don't worry, here you can earn it.</h1>
           </div>
