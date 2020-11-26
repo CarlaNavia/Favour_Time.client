@@ -30,6 +30,8 @@ class NewService extends Component {
   handleFileUpload = async (e) => {
     const files = e.target.files[0];
     this.setState({ imgService: files });
+    var pdrs = document.getElementById('file-upload').files[0].name;
+    document.getElementById('info').innerHTML = pdrs;
   };
 
   allServicesSelect = () => {
@@ -64,11 +66,12 @@ class NewService extends Component {
         credits: "",
         imgService: "",
       });
-      this.props.form({ showForm: !this.state.showForm });
     } catch (error) {
       console.log("Error while adding the service: ", error);
     }
   };
+
+ 
 
   render() {
     return (
@@ -172,12 +175,16 @@ class NewService extends Component {
               placeholder="Description"
             />
 
-            <label>Image:</label>
-            <input
+            <label htmlFor="file-upload" className="upload">
+              Upload photo
+            </label>
+            <input id="file-upload"
               type="file"
               onChange={(e) => this.handleFileUpload(e)}
               className="upload"
+              style={{ display: 'none' }}
             />
+            <div id="info"></div>
          
             <Button variant="outline-danger" size="lg" className="signin-btn">
               <input type="submit" value="NEW SERVICE" className="input-Submit"/>

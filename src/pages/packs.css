@@ -49,7 +49,18 @@
     border: 1px solid rgb(232,110,108);
    
   }
+  .randomContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: center;
+}
 
+.secondSection{
+    background-color: rgb(241, 241, 241);
+    padding: 100px;
+}
 @media screen and (min-width:650px){
     .boxCredits{
         display: flex;

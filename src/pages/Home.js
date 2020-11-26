@@ -7,6 +7,7 @@ import RandomServices from "../components/services/RandomServices";
 import './home.css';
 import { Button, Modal } from 'react-bootstrap';
 import Search from "../components/Search";
+import Footer from "../components/Footer";
 
 function Home() {
 
@@ -51,14 +52,12 @@ function Home() {
         </Modal.Body>
       </Modal>
     <div className="secondSection">
-
       <div className="randomContainer">
           <RandomServices />
       </div>
-  
-
     </div>
-        </div>
+    <Footer/>
+    </div>
     );
   }
 

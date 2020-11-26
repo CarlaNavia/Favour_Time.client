@@ -27,7 +27,6 @@ class HeaderProfile extends Component {
   }
 
   render() {
-    console.log(this.props, "props");
     return (
       <div className="columns is-mobile heading_position">
         <NavBar />

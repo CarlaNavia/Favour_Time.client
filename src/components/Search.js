@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ServiceTypeService from '../lib/serviceType-service';
 import { Link } from "react-router-dom";
 import './search.css';
+import { Form, FormControl } from 'react-bootstrap';
 
 class Search extends Component {
     state = { 
@@ -49,31 +50,26 @@ class Search extends Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="search_box">
-        <input 
-          type="search" 
-          name="search" 
-          className="searchInput"
-          placeholder="Search in all categories" 
-          value={this.state.search} 
-          onChange={(e)=> this.handleChange(e)} 
-        />
-        <ul>
+      <div className="wrapperSearch">
+        <div className="">
+        <Form>
+        <FormControl type="text" placeholder="Search in all categories" name="search" className="mr-lg-2" value={this.state.search}  onChange={(e)=> this.handleChange(e)}  />
+        </Form>
+
         <div className="search_Container">
         {this.state.filteredServiceList ? this.state.filteredServiceList.map((service, index)=> {
           return(
-          
-              <li key={index} >
+            <div className="boxFilter">
+              <p key={index} >
               <Link className="liSearch" to={`/servicetype/${service.serviceType && service.serviceType._id}`}>
-                {service.serviceName} <br/>
-                {service.serviceType && service.serviceType.serviceName}
+                <p className="NameService">{service.serviceName}</p>
+                <p className="NameType">{service.serviceType && service.serviceType.serviceName}</p>
               </Link>
-              </li>
+              </p>
+            </div>
           )
         }) : "" }
-        </div>
-        </ul>
+          </div>
         </div>
       </div>
     )

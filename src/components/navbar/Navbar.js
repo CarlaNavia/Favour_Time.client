@@ -31,6 +31,7 @@ const NavBar = (props) => {
     setShowSignup(true);
     setShow(false);
   };
+  
   return (
     <>
       {isLoggedin ? (

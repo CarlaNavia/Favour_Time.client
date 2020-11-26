@@ -4,6 +4,7 @@ import { withAuth } from "../lib/AuthProvider";
 import UserService from "../lib/user-service";
 import './packs.css'
 import { Card, Button } from 'react-bootstrap';
+import RandomServices from '../components/services/RandomServices';
 
 class Packs extends Component {
  
@@ -68,12 +69,14 @@ class Packs extends Component {
         </Card>
       </div>
 
-      <div className="secondSeccion">
-        <h1>hola</h1>
+      <div className="secondSection">
+
+        <div className="randomContainer">
+            <RandomServices />
+        </div>
+
+
       </div>
-        {/* <div onClick={() => this.addCredits(30)}>30 credits</div>
-        <div onClick={() => this.addCredits(60)}>60 credits</div>
-        <div onClick={() => this.addCredits(120)}>120 credits</div> */}
       </>
     );
   }
