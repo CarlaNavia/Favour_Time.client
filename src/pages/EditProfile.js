@@ -4,6 +4,7 @@ import Navbar from "../components/navbar/Navbar";
 import { withAuth } from "../lib/AuthProvider";
 import UserService from "../lib/user-service";
 import "../pages/Profile/Profile.css";
+import { Link } from "react-router-dom";
 
 class EditProfile extends Component {
   state = {

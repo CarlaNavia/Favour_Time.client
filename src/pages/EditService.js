@@ -4,6 +4,7 @@ import BookingService from "../lib/booking-service";
 import ServiceTypeService from "../lib/serviceType-service";
 import HeaderProfile from "../components/HeaderProfile";
 import "./Profile/Profile.css";
+import { Link } from "react-router-dom";
 
 class EditService extends Component {
   state = {
@@ -58,6 +59,13 @@ class EditService extends Component {
     return (
       <div className="container header">
         <HeaderProfile history={this.props.history} user={this.props.user} />
+        <Link to={"/profile"}>
+            <img
+              className="icons"
+              src="../../002-flecha-izquierda.png"
+              alt="back"
+            />
+          </Link>
         <h1 className="h1_title ">EDIT MY SERVICE</h1>
         <form className="align_form" onSubmit={(e) => this.handleSubmit(e)}>
           <label>Service Name:</label>

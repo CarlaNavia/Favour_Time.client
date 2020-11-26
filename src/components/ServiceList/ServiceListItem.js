@@ -23,8 +23,8 @@ class ServiceListItem extends Component {
         </div>
         <div className="column is-one-fifth desktop">
           {this.props.isOwner && (
-            <Link to={`/service/edit/${this.props.oneService._id}`}>
-              <img className="icons" src="../../../edit.png" alt="edit" />
+            <Link  to={`/service/edit/${this.props.oneService._id}`}>
+              <img className="icons margin_buttons" src="../../../edit.png" alt="edit" />
             </Link>
           )}
           <br />
