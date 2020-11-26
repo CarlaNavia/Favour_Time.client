@@ -5,12 +5,14 @@ a.liSearch{
 
 .search_Container{
     position: absolute;
+    cursor: pointer;
 }
 .form-control{
     border-radius: 2rem;
     width: 300px;
     border: 1px solid rgb(232,110,108);
     margin-bottom: 10px;
+    cursor: pointer;
 }
 .boxFilter{
     border: 1px solid rgb(232,110,108);
@@ -38,7 +40,17 @@ a.liSearch{
     margin: 50px;
     text-align: center;
     border: none;
-    cursor: pointer;
+   }
+   .form-control:hover::placeholder{
+       color:#fff;
+   }
+   .form-control:focus::placeholder{
+    color:#fff;
+}
+
+   .form-control:hover, .form-control:focus{
+    background: rgb(232,110,108);
+    color: #fff;
    }
    .form-control:focus{
     border: 1px solid black;
