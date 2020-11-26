@@ -16,7 +16,7 @@ a.liSearch{
 }
 .boxFilter{
     border: 1px solid rgb(232,110,108);
-    background: rgb(241, 241, 241);
+    background: #fff;
     width: 213%;
     display: flex;
     flex-direction: column;
@@ -28,10 +28,12 @@ a.liSearch{
     margin: 0;
 }
 .NameService{
-    color: rgba(24, 22, 22, 0.877);
+    color: rgb(167, 153, 132);
     margin-top:10px;
+    margin-bottom: 0px;
     font-weight: bold;
     text-transform: uppercase;
+
 }
 
 .wrapperSearch{

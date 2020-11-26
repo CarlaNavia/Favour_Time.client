@@ -13,6 +13,7 @@
 
 .tituloSearch{
     margin-bottom: 20px;
+    text-align: center;
 }
 .tituloSearch:hover{
     margin-bottom: 30px;
@@ -64,11 +65,9 @@
 .headerModalService{
     background-color:rgb(198,182,157); 
 }
-
 .titleContainerService{
-    margin-left: 157px;
     color: #fff;
     text-align: center;
     text-decoration: underline;
-
 }
+

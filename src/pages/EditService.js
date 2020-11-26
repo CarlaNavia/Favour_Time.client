@@ -30,11 +30,11 @@ class EditService extends Component {
   }
   handleImageService(event) {
     const files = event.target.files[0];
-    ServiceTypeService.handleUpload(files, this.state.currentService._id).then(
-      (data) => {
-        this.setState({ currentService: data });
-      }
-    );
+    ServiceTypeService.handleUpload(files,  this.state.currentService._id).then((data) => {
+      this.setState({ currentService: data });
+    });
+    var pdrs = document.getElementById('file-upload').files[0].name;
+    document.getElementById('info').innerHTML = pdrs;
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -70,7 +70,7 @@ class EditService extends Component {
         <form className="align_form" onSubmit={(e) => this.handleSubmit(e)}>
           <label>Service Name:</label>
           <input
-            className="form_profile"
+            className="input_Form"
             type="text"
             defaultValue={this.state.currentService.serviceName}
             onChange={(e) => this.handleInputChange(e, "serviceName")}
@@ -103,55 +103,66 @@ class EditService extends Component {
               );
             })}
           </select>
-          <br />
+     
           <label>Description:</label>
           <input
-            className="form_profile"
+            className="input_Form"
             type="text"
             defaultValue={this.state.currentService.description}
             onChange={(e) => this.handleInputChange(e, "description")}
           />
-          <br />
           <label>Image:</label>
-          <input
-            className="form_profile"
+          <label htmlFor="file-upload" className="uploadEdit">
+              Upload photo
+            </label>
+            <input id="file-upload"
+              type="file"
+              defaultValue={this.state.currentService.imageService}
+              onChange={(e) => this.handleImageService(e)}
+              className="uploadEdit"
+              style={{ display: 'none' }}
+            />
+            <div id="info"></div>
+
+          {/* <input
+            className="input_Form"
             type="file"
             defaultValue={this.state.currentService.imageService}
             onChange={(e) => this.handleImageService(e)}
-          />
-          <br />
+          /> */}
+
           <label>Available Time:</label>
           <input
-            className="form_profile"
+            className="input_Form"
             type="text"
             defaultValue={this.state.currentService.availableTime}
             onChange={(e) => this.handleInputChange(e, "availableTime")}
           />
-          <br />
+         
           <label>City:</label>
           <input
-            className="form_profile"
+            className="input_Form"
             type="text"
             defaultValue={this.state.currentService.cityToBeHeld}
             onChange={(e) => this.handleInputChange(e, "cityToBeHeld")}
           />
-          <br />
+          
           <label>Address:</label>
           <input
-            className="form_profile"
+            className="input_Form"
             type="text"
             defaultValue={this.state.currentService.addressToBeHeld}
             onChange={(e) => this.handleInputChange(e, "addressToBeHeld")}
           />
-          <br />
+      
           <label>Credits:</label>
           <input
-            className="form_profile"
+            className="input_Form"
             type="text"
             defaultValue={this.state.currentService.credits}
             onChange={(e) => this.handleInputChange(e, "credits")}
           />
-          <button className="buttons_profile">Save</button> <br />
+          <button className="buttons_profile">Save</button>
         </form>
       </div>
     );

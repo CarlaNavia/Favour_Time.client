@@ -40,6 +40,10 @@
       margin-top: 15px;
      
     }
+    .linkRandom{
+      color: rgb(232, 110, 108);
+
+    }
     a.nameCategory{
       color: black;
     }
@@ -51,4 +55,9 @@
   .align_photos{
     object-fit: cover;
     height: 150px;
+  }
+
+  a.linkRandom{
+    text-decoration: none;
+    color: rgb(232, 110, 108);
   }

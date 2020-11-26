@@ -18,7 +18,9 @@ const NavBar = (props) => {
       return "/default-user-image.png"
     }
   }
+
   const { user, logout, isLoggedin } = props;
+
 
   const [show, setShow] = React.useState(false);
   const handleClose = () => setShow(false);
@@ -52,7 +54,7 @@ const NavBar = (props) => {
                       src={getImageProfile()}
                       alt="profile"
                       className="imgButtonProfile"
-                    />{" "}
+                    />
                     Profile
                   </Link>
                 </Button>
@@ -168,7 +170,7 @@ const NavBar = (props) => {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="headerFaq">
           <Modal.Title className="titleContainerFaq">
             {" "}
            FREQUENT ASKED QUESTIONS{" "}

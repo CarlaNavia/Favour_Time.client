@@ -110,7 +110,7 @@ class ServiceDetails extends Component {
             </p>
             <p>
               <strong>Owner of the service: </strong>
-              {this.state.owner.name}
+              {this.state.owner && this.state.owner.name}
             </p>
             <img
               src={this.getImageProfile()}
