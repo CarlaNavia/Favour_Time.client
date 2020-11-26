@@ -8,14 +8,24 @@ import Signup from "../../pages/Signup";
 import Faqs from "../../pages/Faqs";
 
 const NavBar = (props) => {
+
   function getImageProfile() {
     if (props.user.imageProfile !== "") {
       return props.user.imageProfile;
     } else {
-      return "../../../default-user-image.png";
+      return '../../../default-user-image.png';
     }
   }
+
   const { user, logout, isLoggedin } = props;
+
+  // const [ profileImage, setProfileImage ] = React.useState('../../../default-user-image.png');
+  // useEffect((props) => { 
+  //   console.log()
+  //   if (props && props.user.imageProfile !== ""){
+  //     setProfileImage(props.user.imageProfile)
+  //   }
+  // } , [profileImage]);
 
   const [show, setShow] = React.useState(false);
   const handleClose = () => setShow(false);
@@ -49,7 +59,7 @@ const NavBar = (props) => {
                       src={getImageProfile()}
                       alt="profile"
                       className="imgButtonProfile"
-                    />{" "}
+                    />
                     Profile
                   </Link>
                 </Button>
