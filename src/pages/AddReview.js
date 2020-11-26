@@ -4,6 +4,7 @@ import BookingService from "../lib/booking-service";
 import { withAuth } from "../lib/AuthProvider";
 import ServiceListItem from "../components/ServiceList/ServiceListItem";
 import "../pages/Profile/Profile.css";
+import { Link } from "react-router-dom";
 
 class AddReview extends Component {
   state = {
@@ -52,6 +53,13 @@ class AddReview extends Component {
     return (
       <div className="container header">
         <HeaderProfile history={this.props.history} user={this.props.user} />
+        <Link to={"/profile"}>
+            <img
+              className="icons"
+              src="../../002-flecha-izquierda.png"
+              alt="back"
+            />
+          </Link>
         <h1 className="h1_title ">SERVICE TO BE REVIEWED:</h1>
         {this.state.hasInformation && (
           <ServiceListItem oneService={this.state.booking.service} />

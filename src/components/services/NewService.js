@@ -65,7 +65,8 @@ class NewService extends Component {
         streetNumberToBeHeld: "",
         credits: "",
         imgService: "",
-      });
+      })
+      this.props.onClose()
     } catch (error) {
       console.log("Error while adding the service: ", error);
     }

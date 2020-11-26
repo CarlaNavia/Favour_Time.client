@@ -60,12 +60,12 @@ class EditService extends Component {
       <div className="container header">
         <HeaderProfile history={this.props.history} user={this.props.user} />
         <Link to={"/profile"}>
-            <img
-              className="icons"
-              src="../../002-flecha-izquierda.png"
-              alt="back"
-            />
-          </Link>
+          <img
+            className="icons"
+            src="../../002-flecha-izquierda.png"
+            alt="back"
+          />
+        </Link>
         <h1 className="h1_title ">EDIT MY SERVICE</h1>
         <form className="align_form" onSubmit={(e) => this.handleSubmit(e)}>
           <label>Service Name:</label>
@@ -75,18 +75,29 @@ class EditService extends Component {
             defaultValue={this.state.currentService.serviceName}
             onChange={(e) => this.handleInputChange(e, "serviceName")}
           />
-          <label for="serviceTypeID">Service Type:</label>
+          <br />
+          <label htmlFor="serviceTypeID">Service Type:</label>
           <select
-            className="input_Form"
+            className="form_profile"
             name="serviceTypeID"
-            value={this.state.currentService.serviceTypeID}
-            onChange={(e) => this.handleInputChange(e)}
+            value={
+              this.state.currentService.serviceType &&
+              this.state.currentService.serviceType._id
+            }
+            onChange={(e) => this.handleInputChange(e, "serviceType")}
             required
           >
             <option value=""></option>
             {this.state.serviceTypeSelect.map((type) => {
               return (
-                <option key={type._id} value={type._id}>
+                <option
+                  key={type._id}
+                  value={type._id}
+                  selected={
+                    this.state.currentService.serviceType &&
+                    this.state.currentService.serviceType._id === type._id
+                  }
+                >
                   {type.serviceName}
                 </option>
               );
