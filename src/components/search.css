@@ -1,6 +1,8 @@
 
 a.liSearch{
     text-decoration: none;
+    list-style: none;
+    color: rgb(232,110,108);
 } 
 
 .search_Container{
