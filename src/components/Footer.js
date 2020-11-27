@@ -6,7 +6,7 @@ export default function Footer() {
     return (
   <Navbar sticky="bottom" bg="light" className="navbarInfo">
     <Navbar.Brand href="#home"  className="containerFooter">
-    <div className="containerIcons">
+    {/* <div className="containerIcons">
       <img
         alt="facebook"
         src="../../Icons/facebook.png"
@@ -29,7 +29,7 @@ export default function Footer() {
         className="iconFooter align-center"
       />
 
-    </div>
+    </div> */}
   
     </Navbar.Brand>
   </Navbar>

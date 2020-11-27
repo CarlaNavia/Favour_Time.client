@@ -48,27 +48,27 @@ const NavBar = (props) => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                  <Link to={"/profile"} className="buttonLink">
                 <Button variant="outline-danger" size="lg">
+                  <Link to={"/profile"} className="buttonLink">
                     <img
                       src={getImageProfile()}
                       alt="profile"
                       className="imgButtonProfile"
                     />
                     Profile
-                </Button>
                   </Link>
+                </Button>
 
-                  <Link to={"/packs"} className="buttonLink">
                 <Button variant="outline-danger" className="space" size="lg">
+                  <Link to={"/packs"} className="buttonLink">
                     <img
                       src="../../../Icons/tiempo-es-dinero.png"
                       alt="Coins"
                       className="imgButton"
                     />{" "}
                     {user.credits} Credits
-                </Button>
                   </Link>
+                </Button>
 
                 <Button
                   variant="outline-danger"
