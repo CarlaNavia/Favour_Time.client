@@ -75,10 +75,10 @@ class EditService extends Component {
             defaultValue={this.state.currentService.serviceName}
             onChange={(e) => this.handleInputChange(e, "serviceName")}
           />
-          <br />
+          
           <label htmlFor="serviceTypeID">Service Type:</label>
           <select
-            className="form_profile"
+            className="input_Form"
             name="serviceTypeID"
             value={
               this.state.currentService.serviceType &&
@@ -104,13 +104,6 @@ class EditService extends Component {
             })}
           </select>
      
-          <label>Description:</label>
-          <input
-            className="input_Form"
-            type="text"
-            defaultValue={this.state.currentService.description}
-            onChange={(e) => this.handleInputChange(e, "description")}
-          />
           <label>Image:</label>
           <label htmlFor="file-upload" className="uploadEdit">
               Upload photo
@@ -123,13 +116,6 @@ class EditService extends Component {
               style={{ display: 'none' }}
             />
             <div id="info"></div>
-
-          {/* <input
-            className="input_Form"
-            type="file"
-            defaultValue={this.state.currentService.imageService}
-            onChange={(e) => this.handleImageService(e)}
-          /> */}
 
           <label>Available Time:</label>
           <input
@@ -161,6 +147,13 @@ class EditService extends Component {
             type="text"
             defaultValue={this.state.currentService.credits}
             onChange={(e) => this.handleInputChange(e, "credits")}
+          />
+          <label>Description:</label>
+          <textarea
+            className="input_Form"
+            type="text"
+            defaultValue={this.state.currentService.description}
+            onChange={(e) => this.handleInputChange(e, "description")}
           />
           <button className="buttons_profile">Save</button>
         </form>

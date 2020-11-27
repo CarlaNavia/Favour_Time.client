@@ -10,6 +10,7 @@
     border: 1px solid #D2BB7A;
     padding: 5px;
     text-decoration: none;
+    list-style: none;
     color: #273746;
     text-align: center;
     max-height: 250px;
@@ -22,4 +23,3 @@
     max-height: 140px;
   }
 
- 

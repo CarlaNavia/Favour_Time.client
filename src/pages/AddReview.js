@@ -67,14 +67,14 @@ class AddReview extends Component {
         <h1 className="h1_title ">ADD YOUR REVIEW:</h1>
         <form className="align_form" onSubmit={(e) => this.handleSubmit(e)}>
           <label className="label_margin ">Description:</label>
-          <input className="form_profile"
+          <input className="input_Form"
             required
             type="text"
             defaultValue={this.state.review.description}
             onChange={(e) => this.handleInputChange(e, "description")}
           /><br/>
           <label className="label_margin ">Rating:</label>
-          <input className="form_profile"
+          <input className="input_Form"
             required
             type="number"
             min="1"

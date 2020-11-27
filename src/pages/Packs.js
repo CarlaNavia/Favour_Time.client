@@ -39,7 +39,7 @@ class Packs extends Component {
               </Card.Text>
               <div className="buttonBuy">
                 <Button variant="outline-danger">
-                  <div onClick={() => this.addCredits(30)}>BUY TIME</div>
+                  <div onClick={() => this.addCredits(30)}>9.99€</div>
                 </Button>
               </div>
             </Card.Body>
@@ -57,7 +57,7 @@ class Packs extends Component {
               </Card.Text>
               <div className="buttonBuy">
                 <Button variant="outline-danger">
-                  <div onClick={() => this.addCredits(60)}>BUY TIME</div>
+                  <div onClick={() => this.addCredits(60)}>18.99€</div>
                 </Button>
               </div>
             </Card.Body>
@@ -75,7 +75,7 @@ class Packs extends Component {
               </Card.Text>
               <div className="buttonBuy">
                 <Button variant="outline-danger">
-                  <div onClick={() => this.addCredits(120)}>BUY TIME</div>
+                  <div onClick={() => this.addCredits(120)}>24.99€</div>
                 </Button>
               </div>
             </Card.Body>

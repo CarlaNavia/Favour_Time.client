@@ -147,7 +147,7 @@ class ServiceDetails extends Component {
             <label>Extra Information:</label>
 
             <textarea
-              className="form_profile"
+              className="form_Book"
               type="text"
               name="extraInformation"
               value={this.state.extraInformation}

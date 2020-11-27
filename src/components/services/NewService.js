@@ -188,7 +188,7 @@ class NewService extends Component {
             <div id="info"></div>
 
               <div className="containerBtn">
-                <Button variant="" size="lg" className="signin-btn">
+                <Button variant="" size="lg" className="newServicebtn">
                   <input type="submit" value="NEW SERVICE" className="signin-input"/>
                 </Button>
               </div>

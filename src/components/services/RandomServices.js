@@ -43,7 +43,7 @@ class RandomServices extends Component {
                 key={random._id}
                 className="cardRandom"
               >
-                <Link to={`/services/${random._id}`}>
+                <Link to={`/services/${random._id}`} className="linkRandom">
                   <Card.Img
                     className="align_photos"
                     variant="top"
@@ -54,7 +54,7 @@ class RandomServices extends Component {
                     <Card.Text>
                       {random.description}
                       <br />
-                      {random.credits}
+                      {random.credits} Credits
                     </Card.Text>
                   </Card.Body>
                 </Link>

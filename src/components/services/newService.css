@@ -69,7 +69,7 @@
     justify-content: center;
 }
 
-.signin-btn{
+.newServicebtn{
     color: #fff;
     width: 80%;
     padding: 10px;
@@ -88,7 +88,7 @@
     border: none;
     outline: none;
 }
-.signin-btn:hover, .signin-btn:focus, .signin-btn:active{
+.newServicebtn:hover, .newServicebtn:focus, .newServicebtn:active{
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);

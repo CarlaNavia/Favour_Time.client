@@ -17,12 +17,13 @@ a.liSearch{
 .boxFilter{
     border: 1px solid rgb(232,110,108);
     background: #fff;
-    width: 213%;
+    width: 94%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px 0px;
     border-radius: 0.4rem;
+    z-index: 1;
 }
 .boxFilter>p{
     margin: 0;
@@ -60,6 +61,6 @@ a.liSearch{
    }
 @media screen and (min-width:992px){
     .boxFilter{
-        width: 212%;
+        width: 93%;
     }
 }
