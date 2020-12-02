@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Private from "./pages/Private";
 import Profile from "./pages/Profile/Profile";
 import EditProfile from "./pages/EditProfile";
 import PrivateRoute from "./components/PrivateRoute";
@@ -31,14 +30,13 @@ class App extends Component {
             <Route exact path='/servicetype' component={ServiceType} />
             <Route exact path='/servicetype/:categoryID' component={Services} />
             <Route exact path='/faqs' component={Faqs} />
-            <PrivateRoute exact path='/private' component={Private} />
+            <PrivateRoute exact path='/services/:serviceID' component={ServiceDetails} />
+            <PrivateRoute exact path='/service/edit/:serviceId' component={EditService} />
             <PrivateRoute exact path='/profile' component={Profile} />
             <PrivateRoute exact path='/profile/edit/:userId' component={EditProfile} />
-            <PrivateRoute exact path='/service/edit/:serviceId' component={EditService} />
             <PrivateRoute exact path='/packs' component={Packs} />
             <PrivateRoute exact path='/add-a-review/:bookingId' component={AddReview} />
             
-            <PrivateRoute exact path='/services/:serviceID' component={ServiceDetails} />
             
           </Switch>
         </div>
